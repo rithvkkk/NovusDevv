@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Novus Devv</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+    <img src="logo.png" alt="Logo">
+    Novus <span>Devv</span>
+</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn">Get Quote</a>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p>Let's discuss your project.</p>
+        </div>
+
+        <section class="container">
+            <div class="grid-3" style="margin-bottom: 3rem; text-align: center;">
+                <div>
+                    <i class="fas fa-phone-alt" style="color: var(--primary); font-size: 1.5rem;"></i>
+                    <h3 style="margin-top: 0.5rem;">Phone</h3>
+                    <p><a href="tel:+919741215675">+91 9741215675</a></p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope" style="color: var(--primary); font-size: 1.5rem;"></i>
+                    <h3 style="margin-top: 0.5rem;">Email</h3>
+                    <p><a href="mailto:rithviks390@gmail.com">rithviks390@gmail.com</a></p>
+                </div>
+                <div>
+                    <i class="fab fa-linkedin-in" style="color: var(--primary); font-size: 1.5rem;"></i>
+                    <h3 style="margin-top: 0.5rem;">LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/rithvik-s-38b56b35b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">View Profile</a></p>
+                </div>
+            </div>
+
+            <form name="contact" method="POST" data-netlify="true" action="/success.html">
+                
+                <input type="hidden" name="form-name" value="contact" />
+                
+                <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" required placeholder="John Doe">
+                </div>
+<div class="form-group">
+                <label>Phone Number</label>
+                    <input type="number" name="Phone No" class="form-control" required placeholder="9876543210">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Service Needed</label>
+                    <select name="service" class="form-control">
+                        <option value="New Website">New Website Build</option>
+                        <option value="Site Management">Website Management</option>
+                        <option value="Ads/Marketing">Google/Social Ads</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="5" class="form-control" required placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Novus Devv. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
