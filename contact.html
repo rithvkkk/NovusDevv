@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>NOVUS | Get In Touch</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#dfe2f1",
+            "tertiary": "#ececec",
+            "tertiary-container": "#d0d0d0",
+            "on-primary": "#00363d",
+            "surface-variant": "#313540",
+            "surface": "#0f131d",
+            "secondary-fixed-dim": "#c3c6d4",
+            "on-primary-fixed-variant": "#004f58",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#3b494c",
+            "inverse-surface": "#dfe2f1",
+            "secondary-container": "#454955",
+            "on-secondary-fixed-variant": "#434652",
+            "on-primary-fixed": "#001f24",
+            "surface-bright": "#353944",
+            "surface-container-lowest": "#0a0e18",
+            "on-secondary": "#2c303b",
+            "primary-container": "#00e5ff",
+            "surface-container-high": "#262a35",
+            "secondary": "#c3c6d4",
+            "surface-container-low": "#171b26",
+            "surface-container": "#1c1f2a",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#00daf3",
+            "outline": "#849396",
+            "on-tertiary": "#2f3131",
+            "error-container": "#93000a",
+            "surface-dim": "#0f131d",
+            "secondary-fixed": "#dfe2f1",
+            "on-primary-container": "#00626e",
+            "on-secondary-fixed": "#171b26",
+            "surface-tint": "#00daf3",
+            "primary": "#c3f5ff",
+            "on-surface-variant": "#bac9cc",
+            "on-secondary-container": "#b5b8c6",
+            "inverse-primary": "#006875",
+            "background": "#0f131d",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-container-highest": "#313540",
+            "on-surface": "#dfe2f1",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "on-tertiary-container": "#575959",
+            "inverse-on-surface": "#2c303b",
+            "tertiary-fixed": "#e2e2e2",
+            "on-tertiary-fixed-variant": "#454747",
+            "primary-fixed": "#9cf0ff"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f131d;
+      color: #dfe2f1;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-panel {
+      background: rgba(49, 53, 64, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(186, 201, 204, 0.1);
+    }
+
+    .kinetic-glow {
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.15);
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, rgba(15, 19, 29, 1) 70%);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-on-primary">
+  <!-- TopAppBar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-[#0f131d]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
+    <div class="flex items-center justify-between px-8 py-4 w-full">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[#00e5ff]" style="font-variation-settings: 'FILL' 1;">flare</span>
+        <span class="text-2xl font-black tracking-tighter text-[#dfe2f1]">NOVUS</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-300 font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="services.html">Explore</a>
+        <a class="text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-300 font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="services.html">Systems</a>
+        <a class="text-[#00e5ff] font-bold font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="contact.html">Contact</a>
+      </div>
+      <button
+        class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest active:scale-95 transition-all">
+        Launch
+      </button>
+    </div>
+  </nav>
+  <main class="pt-32 pb-24 hero-gradient overflow-hidden">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-8 mb-24 relative">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full"></div>
+      <div class="relative z-10">
+        <label class="label-sm text-primary-container uppercase tracking-[0.2em] mb-4 block font-bold">Inquiry
+          Terminal</label>
+        <h1 class="font-['Inter'] font-black tracking-tighter text-display-lg text-7xl md:text-8xl mb-6 max-w-4xl">
+          Get In <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary-fixed-dim">Touch.</span>
+        </h1>
+        <p class="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed">
+          Let's build the future together. Whether you're initiating a system upgrade or a new venture, our kinetic
+          ether is open.
+        </p>
+      </div>
+    </section>
+    <!-- Contact Area -->
+    <section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <!-- Information List (Asymmetric Placement) -->
+      <div class="lg:col-span-5 space-y-8">
+        <div
+          class="glass-panel p-8 rounded-3xl kinetic-glow group hover:bg-surface-variant/60 transition-all duration-500">
+          <div class="flex items-start gap-6">
+            <div
+              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl">alternate_email</span>
+            </div>
+            <div>
+              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">Email</p>
+              <p class="text-[0.95rem] md:text-xl font-bold text-on-background"><a
+                  href="mailto:novusinnovates@gmail.com"
+                  class="hover:text-primary-container transition-colors">novusinnovates@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel p-8 rounded-3xl group hover:bg-surface-variant/60 transition-all duration-500">
+          <div class="flex items-start gap-6">
+            <div
+              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl">phone_iphone</span>
+            </div>
+            <div>
+              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">Phone</p>
+              <p class="text-xl font-bold text-on-background"><a href="tel:+919741215675"
+                  class="hover:text-primary-container transition-colors">+91 9741215675</a><br /><a
+                  href="tel:+919964067671" class="hover:text-primary-container transition-colors">+91 9964067671</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel p-8 rounded-3xl group hover:bg-surface-variant/60 transition-all duration-500">
+          <div class="flex items-start gap-6">
+            <div
+              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl">group</span>
+            </div>
+            <div>
+              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">LinkedIn</p>
+              <p class="text-xl font-bold text-on-background"><a href="https://www.linkedin.com/in/rithvik-s-38b56b35b"
+                  target="_blank" class="hover:text-primary-container transition-colors">View Profile</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Visual Texture Element -->
+        <div class="mt-12 opacity-30">
+          <img alt="Satellite view of digital data streams over Earth"
+            class="w-full h-48 object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700"
+            data-alt="Digital blue network patterns and glowing data streams overlaid on a dark satellite view of Earth at night"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVS6iYHDnsy3MVxo1iReqEzTPsSwLfgUK8SXflHFoho8lzdqSHZThyB3rikE4esTO6I64z87ehtxgWDMxT9b7XMBHO7mMkL6-TIqZDXd1Q1mourdkmkFFPnYMuqsaMQc7-Y4qjP61-reGaFvJQHJn-GvDo1Cig97bQOYos2tCuqUne6mCzR0h6-2bWk-4FYbWzLPsHhAfgvuJW6V3igxCriTuvVqvlqiiktovvuIKiOw14wN94DAYdvTKPGkEV6-99xXxSOTySx41n" />
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="glass-panel p-10 md:p-12 rounded-3xl relative overflow-hidden">
+          <!-- Subtle Glow in background of form -->
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container/5 blur-[80px] rounded-full"></div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="relative z-10 space-y-8">
+            <input type="hidden" name="access_key" value="35152bdd-a652-42a0-b7cc-a0937b39c537">
+            <input type="hidden" name="redirect" value="https://novusinnovates.in/success.html">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="group">
+                <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Name</label>
+                <input name="name"
+                  class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant"
+                  placeholder="Your Name" required type="text" />
+              </div>
+              <div class="group">
+                <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Email</label>
+                <input name="email"
+                  class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant"
+                  placeholder="email@domain.com" required type="email" />
+              </div>
+            </div>
+            <div>
+              <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Service
+                Needed</label>
+              <select name="service"
+                class="w-full bg-surface-container-lowest border-r-4 border-surface-container-lowest border-l-2 focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all appearance-none cursor-pointer">
+                <option value="New Website And Website Management">New Website Build And Website Management</option>
+                <option value="Content Creation">Content Creation</option>
+                <option value="Ads/Marketing">Google Meta/Social Media Ads</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Message</label>
+              <textarea name="message"
+                class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant resize-none"
+                placeholder="Tell us about your project..." required rows="5"></textarea>
+            </div>
+            <button
+              class="w-full bg-gradient-to-r from-primary-container to-primary-fixed-dim text-on-primary-container font-black py-5 rounded-xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(0,229,255,0.2)] hover:shadow-[0_0_50px_rgba(0,229,255,0.4)] hover:scale-[1.01] active:scale-[0.98] transition-all duration-300"
+              type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <p class="mt-8 text-on-surface-variant text-sm text-center md:text-left opacity-60">
+          *Transmission secured via 256-bit kinetic encryption. Estimated response within 24 cycles.
+        </p>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-[#0a0e18] dark:bg-[#0a0e18] w-full py-12 px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+      <div class="flex items-center gap-4">
+        <span class="text-[#dfe2f1] font-bold text-lg tracking-tighter">NOVUS</span>
+        <span class="w-8 h-[1px] bg-outline-variant/30"></span>
+        <p class="font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] text-[#bac9cc]">
+          © 2024 NOVUS DEVV. THE KINETIC ETHER.
+        </p>
+      </div>
+      <div class="flex items-center gap-12">
+        <a class="text-[#bac9cc] hover:text-[#00e5ff] transition-all font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="#">Privacy</a>
+        <a class="text-[#bac9cc] hover:text-[#00e5ff] transition-all font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="#">Terms</a>
+        <a class="text-[#bac9cc] hover:text-[#00e5ff] transition-all font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]"
+          href="services.html">Systems</a>
+      </div>
+      <div class="flex gap-4">
+        <div
+          class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-[#bac9cc] hover:text-[#00e5ff] cursor-pointer transition-all">
+          <span class="material-symbols-outlined text-lg">share</span>
+        </div>
+        <div
+          class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-[#bac9cc] hover:text-[#00e5ff] cursor-pointer transition-all">
+          <span class="material-symbols-outlined text-lg">language</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

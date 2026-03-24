@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface": "#2c303b",
+            "on-error": "#690005",
+            "primary-fixed": "#9cf0ff",
+            "secondary": "#c3c6d4",
+            "on-surface-variant": "#bac9cc",
+            "primary": "#c3f5ff",
+            "on-secondary-fixed": "#171b26",
+            "on-primary": "#00363d",
+            "background": "#0f131d",
+            "on-primary-fixed-variant": "#004f58",
+            "inverse-surface": "#dfe2f1",
+            "surface-container": "#1c1f2a",
+            "secondary-fixed-dim": "#c3c6d4",
+            "primary-container": "#00e5ff",
+            "on-secondary-fixed-variant": "#434652",
+            "surface-tint": "#00daf3",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "surface-container-lowest": "#0a0e18",
+            "on-tertiary-container": "#575959",
+            "tertiary": "#ececec",
+            "on-secondary-container": "#b5b8c6",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#dfe2f1",
+            "surface-container-low": "#171b26",
+            "tertiary-container": "#d0d0d0",
+            "on-secondary": "#2c303b",
+            "inverse-primary": "#006875",
+            "outline-variant": "#3b494c",
+            "on-background": "#dfe2f1",
+            "surface-variant": "#313540",
+            "error-container": "#93000a",
+            "surface-container-high": "#262a35",
+            "primary-fixed-dim": "#00daf3",
+            "outline": "#849396",
+            "surface": "#0f131d",
+            "surface-dim": "#0f131d",
+            "on-primary-fixed": "#001f24",
+            "on-surface": "#dfe2f1",
+            "on-tertiary-fixed-variant": "#454747",
+            "tertiary-fixed": "#e2e2e2",
+            "surface-container-highest": "#313540",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-bright": "#353944",
+            "error": "#ffb4ab",
+            "on-tertiary": "#2f3131",
+            "secondary-container": "#454955",
+            "on-primary-container": "#00626e"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #0f131d; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-panel { backdrop-filter: blur(16px); background-color: rgba(49, 53, 64, 0.6); }
+    .no-line-rule { border: none !important; }
+    .tonal-shift { background: linear-gradient(180deg, #171b26 0%, #0f131d 100%); }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0f131d]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00e5ff] text-2xl" data-icon="blur_on">blur_on</span>
+<span class="text-2xl font-black tracking-tighter text-[#dfe2f1]">Novus Devv</span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#bac9cc] hover:text-[#dfe2f1] transition-colors font-['Inter'] font-medium tracking-tight" href="index.html">Home</a>
+<a class="text-[#00e5ff] font-bold border-b-2 border-[#00e5ff] pb-1 font-['Inter'] tracking-tight" href="about.html">About</a>
+<a class="text-[#bac9cc] hover:text-[#dfe2f1] transition-colors font-['Inter'] font-medium tracking-tight" href="services.html">Services</a>
+<button class="px-6 py-2 rounded-full bg-[#00e5ff] text-[#00363d] font-bold hover:scale-95 duration-200 transition-transform">Contact</button>
+</div>
+<!-- Mobile Trigger -->
+<button class="md:hidden text-[#00e5ff] p-2 hover:bg-[#262a35]/50 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="px-8 max-w-7xl mx-auto mb-32">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="w-12 h-[1px] bg-primary-container"></span>
+<span class="text-[0.6875rem] uppercase tracking-[0.2em] text-primary-container font-bold">EST. 2024</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
+          About <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary-fixed-dim">Novus Devv</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-2xl">
+          Novus Devv is a forward-thinking web development agency founded by Rithvik S and Shivaan Gowda S. We specialize in bridging the gap between complex technology and business growth.
+        </p>
+</div>
+</section>
+<!-- Mission/Vision Section (Bento Style) -->
+<section class="px-8 max-w-7xl mx-auto mb-40">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Mission Statement -->
+<div class="md:col-span-7 flex flex-col justify-center pr-0 md:pr-12 mb-12 md:mb-0">
+<label class="text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold mb-4 block">Our Philosophy</label>
+<h2 class="text-4xl md:text-5xl font-bold text-on-background tracking-tight leading-tight mb-8">
+            <span class="text-primary-container">To empower businesses with digital assets that are not only visually stunning</span> but also technically robust and marketing-ready.
+</h2>
+<div class="h-1 w-24 bg-primary-container/20 rounded-full"></div>
+</div>
+<!-- Vision Card (Glassmorphic) -->
+<div class="md:col-span-5 relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-br from-primary-container/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative glass-panel p-10 rounded-3xl h-full flex flex-col justify-between border border-outline-variant/10">
+<div class="flex justify-between items-start mb-12">
+<div class="p-4 bg-surface-container-high rounded-2xl">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="psychology">psychology</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 text-6xl" data-icon="visibility">visibility</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-background mb-4">Who We Are</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                Whether you are a startup looking for your first website or an established brand needing a technical partner to manage your digital presence, we provide the tools and expertise to help you succeed.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="px-8 max-w-7xl mx-auto mb-40">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<label class="text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold mb-4 block">The Collective</label>
+<h2 class="text-4xl md:text-5xl font-bold text-on-background tracking-tighter">Meet the Innovators</h2>
+</div>
+<p class="text-on-surface-variant max-w-md md:text-right">
+          A synchronized team of architects, dreamers, and engineers focused on singular digital mastery.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Team Member 1 -->
+<div class="bg-surface-container-low p-8 rounded-3xl group hover:bg-surface-container-high transition-all duration-300">
+<div class="mb-6 overflow-hidden rounded-2xl aspect-square relative">
+<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container/50" data-icon="person">person</span>
+</div>
+<img alt="Rithvik S" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="professional portrait of a confident male tech executive with modern short haircut in a minimalist dark studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDhqgCjt1Cr7jVQ8mZm5_tHCtsKblhNNNbyMBF1fsapN3g0LVKBuodM8it__LQG3t8CKctrPxOUjaSvpP6av6P_jLmZSwKOvNcp_cXk5C-gi03ehe7EmvrKE4meWLvZ5e0wUcAGrE7XCq-tb4ZkIBt7UgSyqlC5mJez9Q4o8V-KxM-g-ANgCrGWl9QFwqQLTVYIMVhcrReshVQR1rxGTPT5_27cn32_C_zKF6NtJZYlHonBA0RItVXODBpRa1s_RBqblndJWJTl-I"/>
+</div>
+<h4 class="text-xl font-bold text-on-background mb-1">Rithvik S</h4>
+<p class="text-primary-container text-sm font-medium tracking-wide mb-6 uppercase">Founder & Tech Lead</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
+</a>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="bg-surface-container-low p-8 rounded-3xl group hover:bg-surface-container-high transition-all duration-300">
+<div class="mb-6 overflow-hidden rounded-2xl aspect-square relative">
+<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container/50" data-icon="person">person</span>
+</div>
+<img alt="Shivaan Gowda S" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="portrait of a focused female software architect with glasses in a sleek high-tech laboratory environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQWukZWTxNIcMEZPmmIYyAo0W9jkqO9Im0zq8hL2b9uCIX8fXNGGkG57_aHmnIJVmSDE3gGIUlfn7bN9dVicwPgWEuNNf8j-CYDZOr2CkMtq7jDW7shlQTxbBCDNaSSzHdFkCmTZ9qxJMkhGzFK2ig95ncKDO_n_wyNJW5me7G84eDtM81aHXIZbRuiTP-bRiXpG7P5tLkwc3vFZzxe_ZtQmvwLTrmhx7M09bfg1GYFSVRxo6lnRwzAGD-_s77Xeubn805XHj6wehN"/>
+</div>
+<h4 class="text-xl font-bold text-on-background mb-1">Shivaan Gowda S</h4>
+<p class="text-primary-container text-sm font-medium tracking-wide mb-6 uppercase">Founder & Business Growth</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
+</a>
+</div>
+</div>
+
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0e18] w-full rounded-t-[2.75rem] py-16 px-8 flex flex-col items-center gap-12">
+<div class="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex flex-col items-center md:items-start">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-[#00e5ff] text-2xl" data-icon="blur_on">blur_on</span>
+<span class="text-lg font-bold text-[#dfe2f1]">Novus Devv</span>
+</div>
+<p class="text-[#bac9cc] text-sm font-['Inter'] max-w-xs text-center md:text-left">
+          Architecting the future through intelligent digital transformation and elite technical craftsmanship.
+        </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Twitter</a>
+</div>
+</div>
+<div class="w-full h-[1px] bg-outline-variant/10 max-w-7xl"></div>
+<p class="font-['Inter'] text-sm text-[#bac9cc] opacity-60">
+      © 2024 Novus Devv. All rights reserved.
+    </p>
+</footer>
+<!-- Navigation Drawer (Mobile Backdrop - Hidden by default) -->
+<div class="hidden fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm">
+<div class="h-full w-64 flex flex-col p-6 bg-[#0f131d] rounded-r-3xl transition-transform duration-300 ease-in-out">
+<div class="flex items-center gap-3 mb-12">
+<span class="text-xl font-bold text-[#dfe2f1]">Novus Devv</span>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-[#00e5ff]" data-icon="home">home</span>
+          Home
+        </a>
+<a class="flex items-center gap-4 p-4 text-[#00e5ff] bg-[#262a35] rounded-xl font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]" href="#">
+<span class="material-symbols-outlined text-[#00e5ff]" data-icon="info">info</span>
+          About
+        </a>
+<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-[#00e5ff]" data-icon="layers">layers</span>
+          Services
+        </a>
+<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined text-[#00e5ff]" data-icon="mail">mail</span>
+          Contact
+        </a>
+</nav>
+</div>
+</div>
+</body></html>
