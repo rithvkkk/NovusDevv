@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Novus Devv | Innovating the Future</title>
+<link rel="icon" type="image/png" href="logo.png">
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -105,17 +107,17 @@
 <span class="text-cyan-400 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1" href="index.html">Home</a>
-<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors" href="services.html">Services</a>
-<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors" href="about.html">About</a>
-<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors" href="contact.html">Contact</a>
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40">
-                    Get Started
-                </button>
-<button class="md:hidden text-on-surface p-2 hover:bg-white/5 rounded-xl transition-colors">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 uppercase tracking-widest text-[0.6875rem]">
+    Get Started
+</button>
+<button class="md:hidden text-cyan-400 p-2 hover:bg-white/5 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
 </button>
 </div>
 </div>
@@ -133,7 +135,7 @@
 <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
 <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary-container">Next-Gen Tech Solutions</span>
 </div>
-<h1 class="font-['Inter'] font-black tracking-tight text-6xl md:text-8xl text-on-background leading-[0.9]">
+<h1 class="font-['Inter'] font-black tracking-tight text-5xl md:text-8xl text-on-background leading-[0.9]">
                         Innovating <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-cyan-300 to-white">the Future</span>
 </h1>
 <p class="text-on-surface-variant text-xl md:text-2xl max-w-xl leading-relaxed">
@@ -258,11 +260,11 @@
 <div class="flex flex-col gap-4 items-center md:items-start">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-cyan-400" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<span class="text-cyan-400 font-bold uppercase tracking-tighter">Novus Devv</span>
+<span class="text-cyan-400 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
 </div>
 <p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
-                    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
-                </p>
+    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
+</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
 <a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-cyan-300 transition-colors" href="index.html">Home</a>
@@ -286,4 +288,58 @@
 </div>
 </div>
 </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0f131d]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
+        <button id="close-menu" class="absolute top-6 right-8 text-cyan-400 p-2 hover:bg-white/5 rounded-xl transition-colors">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <div class="flex flex-col items-center gap-10 w-full">
+            <a href="index.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Home</a>
+            <a href="services.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Services</a>
+            <a href="about.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">About</a>
+            <a href="contact.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Contact</a>
+            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-[#00e5ff] to-[#00daf3] text-[#00363d] font-black rounded-full text-xl shadow-[0_0_30px_rgba(0,229,255,0.3)] tracking-widest uppercase">Start Project</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtns = document.querySelectorAll('button.md\\:hidden, button:has(.material-symbols-outlined:contains("menu"))');
+            let menuBtn = Array.from(menuBtns).find(b => b.textContent.includes('menu'));
+            if(!menuBtn) {
+                // Also search by data-icon just in case
+                menuBtns.forEach(btn => {
+                    if(btn.innerHTML.includes('menu')) {
+                        menuBtn = btn;
+                    }
+                });
+            }
+            // Add a safety check for standard Tailwind class if previous logic fails
+            if(!menuBtn) menuBtn = document.querySelector('button.md\\:hidden');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-menu');
+            
+            if(menuBtn && mobileMenu && closeBtn) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-0');
+                        mobileMenu.classList.add('opacity-100');
+                    }, 50);
+                });
+                
+                closeBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('flex');
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                });
+            }
+        });
+    </script>
+
 </body></html>

@@ -86,25 +86,29 @@
   </head>
 <body class="text-on-background selection:bg-primary-container/30">
 <!-- TopAppBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#0f131d]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
-<div class="flex justify-between items-center px-8 py-4 w-full max-w-7xl mx-auto">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#00e5ff] text-2xl" data-icon="blur_on">blur_on</span>
-<span class="text-2xl font-black tracking-tighter text-[#dfe2f1]">Novus Devv</span>
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3 group cursor-pointer">
+<span class="material-symbols-outlined text-cyan-400 text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-cyan-400 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
 </div>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center gap-8">
-<a class="text-[#bac9cc] hover:text-[#dfe2f1] transition-colors font-['Inter'] font-medium tracking-tight" href="index.html">Home</a>
-<a class="text-[#00e5ff] font-bold border-b-2 border-[#00e5ff] pb-1 font-['Inter'] tracking-tight" href="about.html">About</a>
-<a class="text-[#bac9cc] hover:text-[#dfe2f1] transition-colors font-['Inter'] font-medium tracking-tight" href="services.html">Services</a>
-<button class="px-6 py-2 rounded-full bg-[#00e5ff] text-[#00363d] font-bold hover:scale-95 duration-200 transition-transform">Contact</button>
-</div>
-<!-- Mobile Trigger -->
-<button class="md:hidden text-[#00e5ff] p-2 hover:bg-[#262a35]/50 rounded-xl transition-all">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
+<a class="text-slate-400 font-medium hover:text-cyan-200 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 uppercase tracking-widest text-[0.6875rem]">
+    Get Started
+</button>
+<button class="md:hidden text-cyan-400 p-2 hover:bg-white/5 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
 </button>
 </div>
-</nav>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
+</header>
 <main class="pt-32 pb-20">
 <!-- Hero Section -->
 <section class="px-8 max-w-7xl mx-auto mb-32">
@@ -113,7 +117,7 @@
 <span class="w-12 h-[1px] bg-primary-container"></span>
 <span class="text-[0.6875rem] uppercase tracking-[0.2em] text-primary-container font-bold">EST. 2024</span>
 </div>
-<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
+<h1 class="text-5xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
           About <br/>
 <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary-fixed-dim">Novus Devv</span>
 </h1>
@@ -208,28 +212,38 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#0a0e18] w-full rounded-t-[2.75rem] py-16 px-8 flex flex-col items-center gap-12">
-<div class="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-12">
-<div class="flex flex-col items-center md:items-start">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#00e5ff] text-2xl" data-icon="blur_on">blur_on</span>
-<span class="text-lg font-bold text-[#dfe2f1]">Novus Devv</span>
+<footer class="w-full rounded-t-[2rem] mt-20 bg-slate-950 border-t border-slate-800/50">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-cyan-400 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
 </div>
-<p class="text-[#bac9cc] text-sm font-['Inter'] max-w-xs text-center md:text-left">
-          Architecting the future through intelligent digital transformation and elite technical craftsmanship.
-        </p>
+<p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
+    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
+</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
-<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">LinkedIn</a>
-<a class="font-['Inter'] text-sm text-[#bac9cc] hover:text-[#00e5ff] transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-cyan-300 transition-colors" href="index.html">Home</a>
+<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-cyan-300 transition-colors" href="services.html">Services</a>
+<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-cyan-300 transition-colors" href="about.html">About</a>
+<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-cyan-300 transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+</div>
+<span class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium opacity-60">© 2024 Novus Devv. All rights reserved.</span>
 </div>
 </div>
-<div class="w-full h-[1px] bg-outline-variant/10 max-w-7xl"></div>
-<p class="font-['Inter'] text-sm text-[#bac9cc] opacity-60">
-      © 2024 Novus Devv. All rights reserved.
-    </p>
 </footer>
 <!-- Navigation Drawer (Mobile Backdrop - Hidden by default) -->
 <div class="hidden fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm">
@@ -257,4 +271,58 @@
 </nav>
 </div>
 </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0f131d]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
+        <button id="close-menu" class="absolute top-6 right-8 text-cyan-400 p-2 hover:bg-white/5 rounded-xl transition-colors">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <div class="flex flex-col items-center gap-10 w-full">
+            <a href="index.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Home</a>
+            <a href="services.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Services</a>
+            <a href="about.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">About</a>
+            <a href="contact.html" class="text-4xl font-black text-slate-400 hover:text-cyan-400 uppercase tracking-widest transition-colors">Contact</a>
+            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-[#00e5ff] to-[#00daf3] text-[#00363d] font-black rounded-full text-xl shadow-[0_0_30px_rgba(0,229,255,0.3)] tracking-widest uppercase">Start Project</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtns = document.querySelectorAll('button.md\\:hidden, button:has(.material-symbols-outlined:contains("menu"))');
+            let menuBtn = Array.from(menuBtns).find(b => b.textContent.includes('menu'));
+            if(!menuBtn) {
+                // Also search by data-icon just in case
+                menuBtns.forEach(btn => {
+                    if(btn.innerHTML.includes('menu')) {
+                        menuBtn = btn;
+                    }
+                });
+            }
+            // Add a safety check for standard Tailwind class if previous logic fails
+            if(!menuBtn) menuBtn = document.querySelector('button.md\\:hidden');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-menu');
+            
+            if(menuBtn && mobileMenu && closeBtn) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-0');
+                        mobileMenu.classList.add('opacity-100');
+                    }, 50);
+                });
+                
+                closeBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('flex');
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                });
+            }
+        });
+    </script>
+
 </body></html>
