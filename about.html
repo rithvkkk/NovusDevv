@@ -100,7 +100,7 @@
 </nav>
 <div class="flex items-center gap-4">
 <a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 uppercase tracking-widest text-[0.6875rem] inline-block text-center flex-col justify-center">Get Started</a>
-<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors">
+<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-trigger">
 <span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
 </button>
 </div>
@@ -323,44 +323,39 @@
             <a href="services.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Services</a>
             <a href="about.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">About</a>
             <a href="contact.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Contact</a>
-            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-[#00e5ff] to-[#00daf3] text-[#00363d] font-black rounded-full text-xl shadow-[0_0_30px_rgba(0,229,255,0.3)] tracking-widest uppercase">Start Project</a>
+            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-blue-600 to-blue-700 text-white font-black rounded-full text-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] tracking-widest uppercase">Start Project</a>
         </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const menuBtns = document.querySelectorAll('button.md\\:hidden, button:has(.material-symbols-outlined:contains("menu"))');
-            let menuBtn = Array.from(menuBtns).find(b => b.textContent.includes('menu'));
-            if(!menuBtn) {
-                // Also search by data-icon just in case
-                menuBtns.forEach(btn => {
-                    if(btn.innerHTML.includes('menu')) {
-                        menuBtn = btn;
-                    }
-                });
-            }
-            // Add a safety check for standard Tailwind class if previous logic fails
-            if(!menuBtn) menuBtn = document.querySelector('button.md\\:hidden');
-
+            const menuTrigger = document.getElementById('mobile-menu-trigger');
             const mobileMenu = document.getElementById('mobile-menu');
             const closeBtn = document.getElementById('close-menu');
             
-            if(menuBtn && mobileMenu && closeBtn) {
-                menuBtn.addEventListener('click', () => {
+            if (menuTrigger && mobileMenu && closeBtn) {
+                menuTrigger.addEventListener('click', () => {
                     mobileMenu.classList.remove('hidden');
                     mobileMenu.classList.add('flex');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('opacity-0');
-                        mobileMenu.classList.add('opacity-100');
-                    }, 50);
+                    // Force reflow
+                    mobileMenu.offsetHeight;
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
                 });
                 
-                closeBtn.addEventListener('click', () => {
+                const closeMenu = () => {
                     mobileMenu.classList.remove('opacity-100');
                     mobileMenu.classList.add('opacity-0');
                     setTimeout(() => {
                         mobileMenu.classList.remove('flex');
                         mobileMenu.classList.add('hidden');
                     }, 300);
+                };
+
+                closeBtn.addEventListener('click', closeMenu);
+                
+                // Close on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
                 });
             }
         });
