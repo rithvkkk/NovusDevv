@@ -106,72 +106,119 @@ function renderKpis(containerId, kpis) {
 function renderRecs(containerId, recs) {
   const c = document.getElementById(containerId);
   c.innerHTML = recs.map((r, i) => {
-    // Build action steps HTML
+    // Build action steps
     const stepsHtml = (r.steps || []).map((s, si) => `
-      <li><span class="step-num">${si + 1}</span><span>${s}</span></li>
+      <li style="display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:.78rem;color:#9ca3af;line-height:1.6;">
+        <span style="width:22px;height:22px;border-radius:50%;background:rgba(37,99,235,0.15);color:#60a5fa;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;flex-shrink:0;margin-top:2px;">${si + 1}</span>
+        <span>${s}</span>
+      </li>
     `).join('');
 
-    // Build metrics HTML
+    // Build metrics
     const metricsHtml = (r.metrics || []).map(m => `
-      <div class="detail-metric">
-        <div class="dm-value" style="color:${m.color || 'var(--text-primary)'}">${m.value}</div>
-        <div class="dm-label">${m.label}</div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px;text-align:center;">
+        <div style="font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:${m.color || '#e8eaf0'};line-height:1;">${m.value}</div>
+        <div style="font-size:.6rem;color:#454b63;text-transform:uppercase;letter-spacing:1px;margin-top:5px;font-weight:600;">${m.label}</div>
       </div>
     `).join('');
 
-    // Build tools tags HTML
-    const toolsHtml = (r.tools || []).map(t => `<span class="detail-tag">${t}</span>`).join('');
+    // Build tools tags
+    const toolsHtml = (r.tools || []).map(t => `
+      <span style="padding:4px 12px;border-radius:6px;font-size:.7rem;font-weight:600;background:rgba(37,99,235,0.12);color:#60a5fa;border:1px solid rgba(37,99,235,0.2);display:inline-block;">${t}</span>
+    `).join('');
 
-    // Timeline dot class
-    const tlClass = r.timeline === '1-2 days' || r.timeline === '< 1 week' ? 'quick' : (r.timeline || '').includes('week') ? 'medium' : 'long';
+    // Timeline colors
+    const tlColor = r.timeline === '1-2 days' || (r.timeline||'').includes('< 1') ? '#22c55e' : (r.timeline || '').includes('week') ? '#f59e0b' : '#ef4444';
+    const diffColor = r.difficulty === 'Easy' ? '#22c55e' : r.difficulty === 'Medium' ? '#f59e0b' : '#ef4444';
 
     return `
-    <li class="rec-item" onclick="this.classList.toggle('expanded')">
+    <li class="rec-item" onclick="this.classList.toggle('expanded')" style="cursor:pointer;flex-wrap:wrap;">
       <div class="rec-priority ${r.priority}">${r.priority === 'high' ? '!' : r.priority === 'medium' ? '!!' : '✓'}</div>
-      <div class="rec-content">
-        <h5>${r.title}</h5>
+      <div class="rec-content" style="flex:1;">
+        <h5 style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+          ${r.title}
+          <svg width="10" height="6" viewBox="0 0 10 6" style="margin-left:auto;flex-shrink:0;transition:transform .3s ease;fill:#454b63;" class="rec-arrow"><path d="M1 1l4 4 4-4"/></svg>
+        </h5>
         <p>${r.desc}</p>
         <div class="rec-impact">⚡ Expected impact: ${r.impact}</div>
 
-        <div class="rec-detail">
-          <div class="rec-detail-grid">
+        <div class="rec-detail" style="display:none;width:100%;margin-top:16px;padding-top:16px;border-top:1px solid rgba(37,99,235,0.1);">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            
             ${stepsHtml ? `
-            <div class="detail-block">
-              <div class="detail-block-title"><span class="material-symbols-outlined">checklist</span>Action Steps</div>
-              <ul class="action-steps">${stepsHtml}</ul>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:16px;">
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#454b63;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+                📋 Action Steps
+              </div>
+              <ul style="list-style:none;padding:0;margin:0;">${stepsHtml}</ul>
             </div>` : ''}
 
-            <div class="detail-block">
-              <div class="detail-block-title"><span class="material-symbols-outlined">analytics</span>Projected Metrics</div>
-              <div class="detail-metrics">${metricsHtml}</div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:16px;">
+              <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#454b63;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+                📊 Projected Metrics
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">${metricsHtml}</div>
               ${r.timeline ? `
-              <div class="detail-timeline" style="margin-top:12px">
-                <span class="tl-dot ${tlClass}"></span>
-                <span><strong>Timeline:</strong> ${r.timeline}</span>
+              <div style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:#9ca3af;margin-top:14px;">
+                <span style="width:8px;height:8px;border-radius:50%;background:${tlColor};flex-shrink:0;"></span>
+                <span><strong style="color:#e8eaf0;">Timeline:</strong> ${r.timeline}</span>
               </div>` : ''}
               ${r.difficulty ? `
-              <div class="detail-timeline">
-                <span class="tl-dot ${r.difficulty === 'Easy' ? 'quick' : r.difficulty === 'Medium' ? 'medium' : 'long'}"></span>
-                <span><strong>Difficulty:</strong> ${r.difficulty}</span>
+              <div style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:#9ca3af;margin-top:6px;">
+                <span style="width:8px;height:8px;border-radius:50%;background:${diffColor};flex-shrink:0;"></span>
+                <span><strong style="color:#e8eaf0;">Difficulty:</strong> ${r.difficulty}</span>
               </div>` : ''}
             </div>
           </div>
 
           ${toolsHtml ? `
-          <div class="rec-detail-full">
-            <div class="detail-block-title"><span class="material-symbols-outlined">build</span>Recommended Tools</div>
-            <div class="detail-tags">${toolsHtml}</div>
+          <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:16px;margin-top:12px;">
+            <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#454b63;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+              🔧 Recommended Tools
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">${toolsHtml}</div>
           </div>` : ''}
 
           ${r.proTip ? `
-          <div class="detail-note">
-            <span class="material-symbols-outlined">lightbulb</span>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.15);border-radius:10px;font-size:.78rem;color:#60a5fa;line-height:1.6;margin-top:12px;">
+            <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px;">💡</span>
             <span><strong>Pro Tip:</strong> ${r.proTip}</span>
           </div>` : ''}
         </div>
       </div>
     </li>`;
   }).join('');
+
+  // Add expand/collapse CSS toggle via JS
+  c.querySelectorAll('.rec-item').forEach(item => {
+    const detail = item.querySelector('.rec-detail');
+    const arrow = item.querySelector('.rec-arrow');
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = item.classList.contains('expanded');
+      // Close all other items in this list
+      c.querySelectorAll('.rec-item.expanded').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('expanded');
+          other.querySelector('.rec-detail').style.display = 'none';
+          const otherArrow = other.querySelector('.rec-arrow');
+          if (otherArrow) otherArrow.style.transform = 'rotate(0deg)';
+        }
+      });
+      if (isExpanded) {
+        detail.style.display = 'none';
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      } else {
+        detail.style.display = 'block';
+        detail.style.animation = 'detailFade .3s ease';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+  // Remove the onclick from li since we use addEventListener now
+  c.querySelectorAll('.rec-item').forEach(item => {
+    item.removeAttribute('onclick');
+  });
 }
 
 function renderChecklist(containerId, items) {

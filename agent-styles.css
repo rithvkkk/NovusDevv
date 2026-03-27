@@ -533,12 +533,136 @@ textarea.input-field { resize:vertical; min-height:80px; }
 .rec-priority.medium { background:var(--orange-bg); color:var(--orange); }
 .rec-priority.low { background:var(--green-bg); color:var(--green); }
 
-.rec-content h5 { font-size:.83rem; font-weight:600; margin-bottom:3px; }
+.rec-content { flex:1; }
+.rec-content h5 {
+  font-size:.83rem; font-weight:600; margin-bottom:3px; cursor:pointer;
+  display:flex; align-items:center; gap:6px;
+}
+.rec-content h5::after {
+  content:''; display:inline-block; width:0; height:0;
+  border-left:4px solid transparent; border-right:4px solid transparent;
+  border-top:5px solid var(--text-muted);
+  transition:transform .3s ease; margin-left:auto; flex-shrink:0;
+}
+.rec-item.expanded .rec-content h5::after { transform:rotate(180deg); }
+
 .rec-content p { font-size:.76rem; color:var(--text-secondary); line-height:1.5; }
 .rec-impact {
   margin-top:5px; font-size:.68rem; color:var(--blue-light);
   font-weight:500; display:flex; align-items:center; gap:4px;
 }
+
+.rec-item { cursor:pointer; flex-wrap:wrap; }
+
+/* Expanded Detail Panel */
+.rec-detail {
+  display:none; width:100%; margin-top:14px; padding-top:14px;
+  border-top:1px solid var(--border);
+  animation:detailFade .3s ease;
+}
+
+.rec-item.expanded .rec-detail { display:block; }
+
+@keyframes detailFade {
+  from { opacity:0; transform:translateY(-6px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.rec-detail-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
+}
+
+@media (max-width:700px) {
+  .rec-detail-grid { grid-template-columns:1fr; }
+}
+
+.detail-block {
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.04);
+  border-radius:var(--radius-sm); padding:14px;
+}
+
+.detail-block-title {
+  font-size:.7rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:1.5px; color:var(--text-muted); margin-bottom:10px;
+  display:flex; align-items:center; gap:6px;
+}
+
+.detail-block-title .material-symbols-outlined { font-size:.85rem; color:var(--blue-light); }
+
+/* Action Steps */
+.action-steps { list-style:none; }
+.action-steps li {
+  display:flex; align-items:flex-start; gap:8px;
+  padding:6px 0; font-size:.78rem; color:var(--text-secondary); line-height:1.5;
+}
+.action-steps li .step-num {
+  width:20px; height:20px; border-radius:50%;
+  background:var(--blue-glow); color:var(--blue-light);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.65rem; font-weight:700; flex-shrink:0; margin-top:1px;
+}
+
+/* Metric Mini Cards inside details */
+.detail-metrics {
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+}
+
+.detail-metric {
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.04);
+  border-radius:6px; padding:10px; text-align:center;
+}
+
+.detail-metric .dm-value {
+  font-family:'Outfit'; font-size:1.1rem; font-weight:700;
+  color:var(--text-primary); line-height:1;
+}
+
+.detail-metric .dm-label {
+  font-size:.62rem; color:var(--text-muted); text-transform:uppercase;
+  letter-spacing:1px; margin-top:4px;
+}
+
+/* Timeline */
+.detail-timeline {
+  display:flex; align-items:center; gap:8px;
+  font-size:.78rem; color:var(--text-secondary);
+  margin-top:6px;
+}
+
+.detail-timeline .tl-dot {
+  width:8px; height:8px; border-radius:50%; flex-shrink:0;
+}
+
+.tl-dot.quick { background:var(--green); }
+.tl-dot.medium { background:var(--orange); }
+.tl-dot.long { background:var(--red); }
+
+/* Tools / Resources tags */
+.detail-tags {
+  display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;
+}
+
+.detail-tag {
+  padding:3px 10px; border-radius:4px; font-size:.68rem; font-weight:600;
+  background:rgba(37,99,235,.1); color:var(--blue-light);
+  border:1px solid rgba(37,99,235,.15);
+}
+
+/* Full-width detail section */
+.rec-detail-full {
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.04);
+  border-radius:var(--radius-sm); padding:14px; margin-top:12px;
+}
+
+.detail-note {
+  display:flex; align-items:flex-start; gap:8px;
+  padding:10px 12px; background:rgba(37,99,235,.06);
+  border:1px solid rgba(37,99,235,.12); border-radius:6px;
+  font-size:.76rem; color:var(--blue-light); line-height:1.5;
+  margin-top:10px;
+}
+
+.detail-note .material-symbols-outlined { font-size:.9rem; flex-shrink:0; margin-top:2px; }
 
 /* SEO Score Ring */
 .score-ring-wrap { text-align:center; padding:24px; }
