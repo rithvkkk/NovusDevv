@@ -47,7 +47,140 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
   document.querySelectorAll('.results-area').forEach(r => r.classList.remove('show'));
 });
 
+// ── RAG / Knowledge Base & Archetypes ───────────────────────
+const KNOWLEDGE_BASE = {
+  "glam luxe": {
+    brand: "Glam Luxe Signature Salon",
+    type: "SALON_SPA",
+    location: "RR Nagar, Bangalore",
+    meta: { followers: 14800, reach: 186400, engagement: 4.2, website_clicks: 2340, profile_visits: 8920, saves: 1560 },
+    seo: { score: 78.0, gbp_completeness: 72.0, review_count: 48, rating: 4.3, citations: 12.0 },
+    recs: [
+        { priority: 'high', title: 'Fix NAP Inconsistencies', desc: 'Found 5 directories with inconsistent business name, address, or phone.', impact: '+15-20% local pack visibility' },
+        { priority: 'high', title: 'Increase Reviews to 100+', desc: 'Currently at 48 reviews vs competitors averaging 99.', impact: '+2-3 positions in local pack' }
+    ]
+  }
+};
+
+const ARCHETYPES = {
+  "SALON_SPA": {
+    name: "Beauty & Wellness",
+    meta: { followers: [5000, 20000], reach: [50000, 250000], engagement: [3.5, 6.0], cpc: [2, 5] },
+    keywords: ["salon", "spa", "makeup", "hair", "beauty", "wellness", "bridal", "parlour"],
+    recs: [
+      { 
+        title: "Double Down on Reels", 
+        desc: "Transformation videos (Before/After) generate 4x more bookings than static images in the beauty sector.", 
+        impact: "+45% booking rate",
+        steps: ["Film 15s transformation reels", "Use trending 'satisfying' audio", "Add location tags in captions"],
+        metrics: [{value: "4x", label: "Conv. Rate", color: "var(--green)"}, {value: "15s", label: "Max Length", color: "var(--blue-light)"}],
+        timeline: "1 week", difficulty: "Medium", tools: ["CapCut", "Instagram Reels"]
+      },
+      {
+        title: "UGC Transformation Wall",
+        desc: "Encourage clients to post their new look. Tagging your biz builds instant social proof.",
+        impact: "+30% referral footfall",
+        steps: ["Create a 'Selfie Spot' in salon", "Offer 5% discount for story tags", "Repost 3+ tags weekly"],
+        metrics: [{value: "30%", label: "Referral Lift", color: "var(--green)"}, {value: "3/wk", label: "Repost Goal", color: "var(--cyan)"}],
+        timeline: "2 weeks", difficulty: "Easy", tools: ["Instagram", "Ring Light"]
+      }
+    ]
+  },
+  "RETAIL_ECOMMERCE": {
+    name: "Retail & E-commerce",
+    meta: { followers: [10000, 100000], reach: [100000, 500000], engagement: [1.2, 3.0], cpc: [8, 25] },
+    keywords: ["store", "shop", "ecommerce", "product", "buy", "fashion", "clothes", "retail"],
+    recs: [
+      {
+        title: "Dynamic Catalog Retargeting",
+        desc: "Show exactly what users left in their cart. Retail ROAS often doubles with DABA campaigns.",
+        impact: "+2.5x ROAS",
+        steps: ["Set up Meta Pixel / CAPI", "Run Advantage+ Catalog Ads", "Exclude past 30-day purchasers"],
+        metrics: [{value: "2.5x", label: "ROAS Target", color: "var(--green)"}, {value: "7 days", label: "Retarget Window", color: "var(--blue-light)"}],
+        timeline: "3 days", difficulty: "Medium", tools: ["Meta Events Manager", "Shopify/Woo"]
+      },
+      {
+        title: "Optimize PDP Hero Shots",
+        desc: "High-quality lifestyle images convert 22% better than plain white backgrounds for fashion/retail.",
+        impact: "+18% Add-to-Cart rate",
+        steps: ["A/B test product vs lifestyle shots", "Implement zoom-on-hover", "Add user review photos to PDP"],
+        metrics: [{value: "22%", label: "Conv. Boost", color: "var(--green)"}, {value: "1.2s", label: "LCP Spec", color: "var(--cyan)"}],
+        timeline: "1 month", difficulty: "Hard", tools: ["Midjourney", "Lighthouse"]
+      }
+    ]
+  },
+  "B2B_SAAS": {
+    name: "B2B & Software",
+    meta: { followers: [2000, 15000], reach: [20000, 100000], engagement: [0.8, 2.5], cpc: [40, 150] },
+    keywords: ["software", "saas", "agency", "tech", "platform", "b2b", "solution", "enterprise"],
+    recs: [
+      {
+        title: "High-Value Lead Magnets",
+        desc: "Whitepapers and industry reports drive 3x more qualified MQLs than generic 'Book Demo' CTAs.",
+        impact: "+40% MQL volume",
+        steps: ["Identify top customer pain point", "Create 5-page PDF solution guide", "Run LinkedIn lead gen ads"],
+        metrics: [{value: "3x", label: "MQL Multiplier", color: "var(--green)"}, {value: "₹450", label: "Target CPL", color: "var(--blue-light)"}],
+        timeline: "2 weeks", difficulty: "Medium", tools: ["LinkedIn Ads", "HubSpot"]
+      },
+      {
+        title: "LinkedIn Thought Leadership",
+        desc: "Founder-led content has 2x reach compared to company pages in B2B tech.",
+        impact: "+50% brand authority",
+        steps: ["Post 3x weekly from founder account", "Share 'Behind the Build' insights", "Engage with 10+ industry peers daily"],
+        metrics: [{value: "2x", label: "Reach vs Page", color: "var(--green)"}, {value: "3/wk", label: "Post Freq", color: "var(--cyan)"}],
+        timeline: "Ongoing", difficulty: "Medium", tools: ["Taplio", "LinkedIn"]
+      }
+    ]
+  },
+  "MEDICAL_HEALTH": {
+    name: "Medical & Health",
+    meta: { followers: [1000, 5000], reach: [10000, 50000], engagement: [2.0, 4.5], cpc: [15, 60] },
+    keywords: ["clinic", "doctor", "health", "hospital", "dentist", "medical", "physio", "pharmacy"],
+    recs: [
+      {
+        title: "E-A-T Content Strategy",
+        desc: "Google prioritizes 'Expertise, Authoritativeness, Trust' for health queries. Doctor-authored blogs are essential.",
+        impact: "Rank #1 for local medical queries",
+        steps: ["Get doctor-verified blog posts", "Add staff credentials to About page", "Ensure all HIPAA compliance labels"],
+        metrics: [{value: "Top 3", label: "Map Ranking", color: "var(--green)"}, {value: "Expert", label: "Trust Score", color: "var(--blue-light)"}],
+        timeline: "3 months", difficulty: "Hard", tools: ["Google Search Console", "SurferSEO"]
+      },
+      {
+        title: "Video Patient Testimonials",
+        desc: "Nothing builds trust like a video of a happy patient. 70% of patients check reviews before booking.",
+        impact: "+50% consultation bookings",
+        steps: ["Request video reviews from top patients", "Caption for privacy & clarity", "Embed on homepage hero"],
+        metrics: [{value: "70%", label: "Check Reviews", color: "var(--green)"}, {value: "+50%", label: "Booking Lift", color: "var(--cyan)"}],
+        timeline: "1 month", difficulty: "Medium", tools: ["Wistia", "Testimonial.to"]
+      }
+    ]
+  }
+};
+
+function getContext(query) {
+  const q = query.toLowerCase();
+  // 1. Check for specific brand in Knowledge Base
+  const brandKey = Object.keys(KNOWLEDGE_BASE).find(k => q.includes(k));
+  if (brandKey) return { ...KNOWLEDGE_BASE[brandKey], contextType: "Brand-Specific (RAG)" };
+
+  // 2. Check for industry archetype
+  for (const type in ARCHETYPES) {
+    if (ARCHETYPES[type].keywords.some(kw => q.includes(kw))) {
+      return { ...ARCHETYPES[type], type, contextType: `${ARCHETYPES[type].name} Archetype` };
+    }
+  }
+
+  // 3. Default fallback
+  return { type: "GENERAL", contextType: "General Business Context" };
+}
+
+function randRange(range) {
+  return (range[0] + Math.random() * (range[1] - range[0])).toFixed(range[1] < 10 ? 1 : 0);
+}
+
 // ── Tab Navigation ────────────────────────────────────────────
+
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -264,6 +397,39 @@ const chartDefaults = {
   },
 };
 
+function showContextInfo(containerId, ctx) {
+    const c = document.getElementById(containerId);
+    let existing = c.querySelector('.context-info-bar');
+    if (existing) existing.remove();
+
+    const bar = document.createElement('div');
+    bar.className = 'context-info-bar';
+    bar.innerHTML = `
+        <div class="context-pill">
+            <span class="material-symbols-outlined">psychology</span>
+            <span><strong>Neural Context:</strong> ${ctx.contextType}</span>
+        </div>
+        ${ctx.brand ? `<div class="context-pill">
+            <span class="material-symbols-outlined">verified</span>
+            <span><strong>Brand Found:</strong> ${ctx.brand}</span>
+        </div>` : ''}
+    `;
+    c.prepend(bar);
+    showKnowledgeBadge(ctx.contextType);
+}
+
+function showKnowledgeBadge(type) {
+    const badge = document.createElement('div');
+    badge.className = 'rag-badge';
+    badge.innerHTML = `<span class="material-symbols-outlined">psychology</span> RAG Active: ${type}`;
+    document.body.appendChild(badge);
+    setTimeout(() => badge.classList.add('show'), 100);
+    setTimeout(() => {
+        badge.classList.remove('show');
+        setTimeout(() => badge.remove(), 500);
+    }, 4000);
+}
+
 // ════════════════════════════════════════════════════════════════
 // ── GOOGLE ADS ANALYSIS ───────────────────────────────────────
 // ════════════════════════════════════════════════════════════════
@@ -272,17 +438,23 @@ function analyzeGoogleAds() {
   const input = document.getElementById('googleAdsInput').value.trim();
   if (!input) { document.getElementById('googleAdsInput').focus(); return; }
 
+  const ctx = getContext(input);
+
   simulateLoading('analyzeGoogle', () => {
     document.getElementById('googleResults').classList.add('show');
+    showContextInfo('googleResults', ctx);
 
     // KPIs
+    const archetype = ARCHETYPES[ctx.type] || ARCHETYPES.SALON_SPA;
+    const isBrand = ctx.contextType.includes('Brand');
+
     renderKpis('googleKpis', [
-      { label: 'Total Spend', value: 48520, prefix: '₹', change: '12.4% vs last month', changeDir: 'up' },
-      { label: 'Impressions', value: 284300, change: '18.2% vs last month', changeDir: 'up' },
-      { label: 'Clicks', value: 12840, change: '8.7% vs last month', changeDir: 'up' },
-      { label: 'CTR', value: 4.5, suffix: '%', change: '0.3% improvement', changeDir: 'up' },
-      { label: 'Avg. CPC', value: 3.8, prefix: '₹', change: '₹0.40 decrease', changeDir: 'up' },
-      { label: 'Conversions', value: 342, change: '15.6% vs last month', changeDir: 'up' },
+      { label: 'Total Spend', value: isBrand && ctx.google ? ctx.google.spend : 48520, prefix: '₹', change: '12.4% vs last month', changeDir: 'up' },
+      { label: 'Impressions', value: isBrand && ctx.google ? ctx.google.imp : 284300, change: '18.2% vs last month', changeDir: 'up' },
+      { label: 'Clicks', value: isBrand && ctx.google ? ctx.google.clicks : 12840, change: '8.7% vs last month', changeDir: 'up' },
+      { label: 'Avg. CPC', value: archetype.meta.cpc[0], prefix: '₹', change: 'Market Avg', changeDir: 'up' },
+      { label: 'Conversions', value: isBrand && ctx.google ? ctx.google.conv : 342, change: '15.6% vs last month', changeDir: 'up' },
+      { label: 'ROAS', value: 3.2, suffix: 'x', change: 'Good performance', changeDir: 'up' },
     ]);
 
     // Spend vs Conversions Chart
@@ -364,38 +536,15 @@ function analyzeGoogleAds() {
     `).join('');
 
     // AI Recommendations
-    renderRecs('googleRecs', [
-      { priority: 'high', title: 'Add Negative Keywords', desc: 'Block irrelevant search terms like "salon jobs", "salon training course", "free makeup" to prevent wasted spend. Found 23 irrelevant search terms consuming ₹4,200/month.', impact: 'Save ₹4,200/month, improve ROAS by ~15%',
-        steps: ['Export Search Terms Report from Google Ads dashboard', 'Identify 23 irrelevant terms (jobs, courses, free, DIY, tutorial)', 'Add as negative keywords at campaign level', 'Create a shared negative keyword list for future campaigns', 'Monitor weekly and add new irrelevant terms'],
-        metrics: [{value:'₹4,200', label:'Monthly Savings', color:'var(--green)'}, {value:'~15%', label:'ROAS Increase', color:'var(--green)'}, {value:'23', label:'Bad Terms Found', color:'var(--red)'}, {value:'4.8%', label:'New Est. CTR', color:'var(--blue-light)'}],
-        timeline: '1-2 days', difficulty: 'Easy',
-        tools: ['Google Ads Keyword Planner', 'Search Terms Report', 'Negative Keyword Lists'],
-        proTip: 'Set up automated rules to flag search terms with 0 conversions and high spend (>₹200) weekly.' },
-      { priority: 'high', title: 'Increase Budget on Top Converters', desc: `"${keywords[0].kw}" and "best hair salon" have the highest conversion rates but are impression-limited. Increase daily budget by 30% on these campaigns.`, impact: '+35-45 conversions/month',
-        steps: ['Identify top 3 campaigns by conversion rate', 'Check impression share (currently ~65% — lost to budget)', 'Increase daily budget from ₹1,200 to ₹1,560 on these campaigns', 'Monitor CPA for 7 days to ensure efficiency', 'Reallocate budget from underperforming campaigns'],
-        metrics: [{value:'+40', label:'Extra Conv/Month', color:'var(--green)'}, {value:'65%→90%', label:'Impression Share', color:'var(--blue-light)'}, {value:'₹140', label:'Target CPA', color:'var(--text-primary)'}, {value:'₹360', label:'Daily Budget Add', color:'var(--orange)'}],
-        timeline: '1 week', difficulty: 'Easy',
-        tools: ['Google Ads Budget Simulator', 'Auction Insights Report'],
-        proTip: 'Use the Budget Simulator tool in Google Ads to preview estimated conversions before increasing spend.' },
-      { priority: 'medium', title: 'Optimize Ad Copy with Location Extensions', desc: 'Enable location extensions and add business structured snippets. Currently only 2 of 5 ad groups use extensions — this suppresses ad rank.', impact: '+20% CTR improvement',
-        steps: ['Link Google Business Profile to Google Ads account', 'Enable Location Extensions across all campaigns', 'Add Structured Snippets (Services: Haircut, Facial, Bridal, Keratin)', 'Add Callout Extensions (Free Consultation, 10+ Years, AC Salon)', 'Enable Call Extensions with business phone number'],
-        metrics: [{value:'+20%', label:'CTR Boost', color:'var(--green)'}, {value:'5/5', label:'Extensions Goal', color:'var(--blue-light)'}, {value:'+0.3', label:'Ad Rank Lift', color:'var(--text-primary)'}, {value:'₹0.40', label:'CPC Reduction', color:'var(--green)'}],
-        timeline: '2-3 days', difficulty: 'Easy',
-        tools: ['Google Ads Extensions', 'Google Business Profile', 'Ad Preview Tool'],
-        proTip: 'Ads with 4+ extensions get 15-20% higher CTR than those with fewer. Always max out your extension slots.' },
-      { priority: 'medium', title: 'A/B Test Responsive Search Ads', desc: 'Current ads have only 3 headlines. Add 12+ headline variations and 4 descriptions for Google\'s ML to optimize combinations.', impact: '+10-18% conversion rate',
-        steps: ['Audit current ad copy — only 3 headlines per ad group', 'Write 12 unique headlines per ad group (include keywords, USPs, CTAs, numbers)', 'Write 4 unique descriptions with different angles', 'Pin key headlines to Position 1 if needed', 'Run for 2 weeks, analyze asset-level performance', 'Remove "Low" performing assets and replace'],
-        metrics: [{value:'12+', label:'Headlines Needed', color:'var(--blue-light)'}, {value:'4+', label:'Descriptions', color:'var(--blue-light)'}, {value:'+15%', label:'Conv Rate Est.', color:'var(--green)'}, {value:'2 weeks', label:'Test Duration', color:'var(--text-primary)'}],
-        timeline: '1-2 weeks', difficulty: 'Medium',
-        tools: ['Google Ads RSA', 'Ad Strength Score', 'Asset Performance Report'],
-        proTip: 'Include at least 2 headlines with location, 2 with pricing/offers, 2 with social proof, and 2 with strong CTAs for best ML optimization.' },
-      { priority: 'low', title: 'Enable Smart Bidding (Target CPA)', desc: 'With 342 conversions/month, you have sufficient data to switch from manual CPC to Target CPA bidding at ₹140/conversion.', impact: 'Reduce CPA by 12-20%',
-        steps: ['Verify conversion tracking is accurate (check last 30 days)', 'Calculate current avg CPA (₹142) to set initial Target CPA', 'Switch bidding strategy to Target CPA on top campaigns first', 'Set learning period expectation: 1-2 weeks of increased volatility', 'Monitor daily and adjust target CPA based on results', 'Expand to all campaigns after stable performance'],
-        metrics: [{value:'₹142→₹118', label:'CPA Reduction', color:'var(--green)'}, {value:'342', label:'Conv. Data Points', color:'var(--text-primary)'}, {value:'14 days', label:'Learning Period', color:'var(--orange)'}, {value:'+25%', label:'Efficiency Gain', color:'var(--green)'}],
-        timeline: '2-3 weeks', difficulty: 'Medium',
-        tools: ['Google Ads Smart Bidding', 'Bid Strategy Report', 'Google Ads Experiments'],
-        proTip: 'Start with a Target CPA 10% above your current average, then gradually lower it as the algorithm learns. Never drop more than 15% at once.' },
-    ]);
+    const defaultRecs = [
+      { priority: 'high', title: 'Add Negative Keywords', desc: 'Block irrelevant search terms like "jobs" or "training" to prevent wasted spend.', impact: 'Save budget, improve ROAS' },
+      { priority: 'high', title: 'Increase Budget on Top Converters', desc: 'Identify your best performing campaigns and increase budget by 20-30%.', impact: '+25% conversions' },
+      { priority: 'medium', title: 'Optimize Ad Extensions', desc: 'Add location and callout extensions to improve ad rank and CTR.', impact: '+15% CTR boost' }
+    ];
+
+    const archetypeRecs = (archetype.recs || []).map(r => ({ priority: 'medium', ...r }));
+
+    renderRecs('googleRecs', isBrand && ctx.recs ? ctx.recs : [...defaultRecs, ...archetypeRecs].slice(0, 5));
   });
 }
 
@@ -408,16 +557,22 @@ function analyzeMetaAds() {
   const input = document.getElementById('metaInput').value.trim();
   if (!input) { document.getElementById('metaInput').focus(); return; }
 
+  const ctx = getContext(input);
+
   simulateLoading('analyzeMeta', () => {
     document.getElementById('metaResults').classList.add('show');
+    showContextInfo('metaResults', ctx);
+
+    const archetype = ARCHETYPES[ctx.type] || ARCHETYPES.SALON_SPA;
+    const isBrand = ctx.contextType.includes('Brand');
 
     renderKpis('metaKpis', [
-      { label: 'Followers', value: 14800, change: '+420 this month', changeDir: 'up' },
-      { label: 'Reach', value: 186400, change: '22.5% vs last month', changeDir: 'up' },
-      { label: 'Engagement Rate', value: 4.2, suffix: '%', change: '0.6% improvement', changeDir: 'up' },
-      { label: 'Website Clicks', value: 2340, change: '18.3% vs last month', changeDir: 'up' },
-      { label: 'Profile Visits', value: 8920, change: '14.1% vs last month', changeDir: 'up' },
-      { label: 'Saves', value: 1560, change: '32.4% vs last month', changeDir: 'up' },
+      { label: 'Followers', value: isBrand ? ctx.meta.followers : randRange(archetype.meta.followers), change: '+420 this month', changeDir: 'up' },
+      { label: 'Reach', value: isBrand ? ctx.meta.reach : randRange(archetype.meta.reach), change: '22.5% vs last month', changeDir: 'up' },
+      { label: 'Engagement Rate', value: isBrand ? ctx.meta.engagement : randRange(archetype.meta.engagement), suffix: '%', change: '0.6% improvement', changeDir: 'up' },
+      { label: 'Website Clicks', value: isBrand ? ctx.meta.website_clicks : 2340, change: '18.3% vs last month', changeDir: 'up' },
+      { label: 'Profile Visits', value: isBrand ? ctx.meta.profile_visits : 8920, change: '14.1% vs last month', changeDir: 'up' },
+      { label: 'Saves', value: isBrand ? ctx.meta.saves : 1560, change: '32.4% vs last month', changeDir: 'up' },
     ]);
 
     // Engagement Chart
@@ -518,38 +673,16 @@ function analyzeMetaAds() {
       </tr>
     `).join('');
 
-    renderRecs('metaRecs', [
-      { priority: 'high', title: 'Double Down on Reels Content', desc: 'Reels generate 3.2x more reach than carousels and 5.4x more than single images. Increase Reels frequency from 3/week to 5/week with trending audio.', impact: '+45-60% reach increase',
-        steps: ['Identify 5 trending audios weekly using Instagram Explore and Reels tab', 'Create a weekly content calendar: 3 service reels + 2 behind-the-scenes', 'Keep reels under 15 seconds for maximum retention', 'Add text overlays and captions for accessibility', 'Post with 5-8 relevant hashtags + location tag'],
-        metrics: [{value:'3.2x', label:'Reach vs Carousel', color:'var(--green)'}, {value:'5/week', label:'Target Frequency', color:'var(--blue-light)'}, {value:'+60%', label:'Reach Increase', color:'var(--green)'}, {value:'<15s', label:'Optimal Length', color:'var(--text-primary)'}],
-        timeline: '1 week to start', difficulty: 'Medium',
-        tools: ['Instagram Reels', 'CapCut Editor', 'Canva Pro', 'Later.com Scheduler'],
-        proTip: 'The first 3 seconds of a Reel determine 80% of retention. Always start with a hook — a transformation reveal, bold text, or satisfying visual.' },
-      { priority: 'high', title: 'Post at 6 PM & 9 PM Consistently', desc: 'Your audience is most active between 6-9 PM. Schedule all key content posts during this window. Currently 40% of posts go out at suboptimal times.', impact: '+25% engagement rate',
-        steps: ['Audit last 30 days of post timing vs engagement', 'Set up scheduling tool with 6 PM and 9 PM time slots (IST)', 'Schedule Reels for 6 PM (peak discovery) and Carousels for 9 PM (peak engagement)', 'Post Stories throughout the day (10 AM, 2 PM, 7 PM, 10 PM)', 'A/B test Saturday vs Sunday for weekend posting'],
-        metrics: [{value:'6 PM', label:'Peak Discovery', color:'var(--green)'}, {value:'9 PM', label:'Peak Engagement', color:'var(--green)'}, {value:'+25%', label:'Engagement Lift', color:'var(--green)'}, {value:'40%', label:'Currently Suboptimal', color:'var(--red)'}],
-        timeline: '< 1 week', difficulty: 'Easy',
-        tools: ['Meta Business Suite', 'Later.com', 'Instagram Insights'],
-        proTip: 'Engagement in the first 30 minutes after posting determines algorithmic reach. Make sure you\'re active to reply to comments immediately after posting.' },
-      { priority: 'medium', title: 'Leverage User-Generated Content', desc: 'Client transformation posts get 2.8x more saves. Create a branded hashtag campaign and reshare 3+ client posts per week.', impact: '+500 followers/month, +35% saves',
-        steps: ['Create a branded hashtag (e.g. #GlamLuxeGlow or #MyGlamLuxe)', 'Print QR code cards for clients to tag the salon after their visit', 'Set up automatic monitoring of the branded hashtag', 'Reshare 3-5 client posts per week in Feed and Stories', 'Run a monthly "Best Transformation" contest with a free service as prize'],
-        metrics: [{value:'2.8x', label:'More Saves', color:'var(--green)'}, {value:'+500', label:'Followers/Month', color:'var(--green)'}, {value:'3-5/wk', label:'UGC Reshares', color:'var(--blue-light)'}, {value:'+35%', label:'Saves Increase', color:'var(--green)'}],
-        timeline: '1-2 weeks', difficulty: 'Easy',
-        tools: ['Branded Hashtag', 'Repost App', 'Canva Templates', 'QR Code Generator'],
-        proTip: 'UGC converts 4.5x better than branded content for service businesses. Always credit the original poster and add your own commentary.' },
-      { priority: 'medium', title: 'Run Engagement Sticker Polls on Stories', desc: 'Interactive story features boost story retention by 40%. Use polls, quizzes, and countdown stickers for upcoming offers.', impact: '+30% story views',
-        steps: ['Create 2-3 interactive Stories daily using sticker features', 'Use Polls: "Which hairstyle? 💇‍♀️" or "Hot take: Keratin > Smoothening?"', 'Use Quizzes: "Guess the price!" or "Which celeb had this haircut?"', 'Use Countdown stickers for upcoming offers or new service launches', 'Use Question stickers for "Ask me anything" sessions monthly'],
-        metrics: [{value:'+40%', label:'Story Retention', color:'var(--green)'}, {value:'+30%', label:'Story Views', color:'var(--green)'}, {value:'2-3/day', label:'Interactive Stories', color:'var(--blue-light)'}, {value:'5x', label:'Reply Rate', color:'var(--text-primary)'}],
-        timeline: '< 1 week', difficulty: 'Easy',
-        tools: ['Instagram Stories', 'Canva Story Templates', 'Meta Business Suite'],
-        proTip: 'Stories with interactive stickers get 3x more replies than static stories. Each reply boosts your account in the algorithm — more DMs = more reach.' },
-      { priority: 'low', title: 'Optimize Bio & CTA Link', desc: 'Add a Linktree with booking link, price menu, and latest offers. Current bio lacks a compelling call-to-action.', impact: '+18% website click-through',
-        steps: ['Create a Linktree or Bento page with 4-5 key links', 'Add links: Book Appointment, Price Menu, Current Offers, Google Reviews, WhatsApp', 'Rewrite bio: Clear value prop + location + CTA emoji', 'Add relevant category and action buttons (Book, Call, Email)', 'Update highlight covers with branded icons'],
-        metrics: [{value:'+18%', label:'Click-through', color:'var(--green)'}, {value:'5', label:'Key Links', color:'var(--blue-light)'}, {value:'+12%', label:'Profile to Lead', color:'var(--green)'}, {value:'2 min', label:'Setup Time', color:'var(--text-primary)'}],
-        timeline: '1-2 days', difficulty: 'Easy',
-        tools: ['Linktree', 'Bento.me', 'Instagram Profile Settings'],
-        proTip: 'A bio that includes "📍 [Location]" and a clear CTA ("Book below ⬇️") converts 22% better than generic descriptions.' },
-    ]);
+    // AI Recommendations
+    const defaultMetaRecs = [
+      { priority: 'high', title: 'Double Down on Reels', desc: 'Video content generates 3.2x more engagement than static posts.', impact: '+45-60% reach increase' },
+      { priority: 'high', title: 'Optimize Posting Times', desc: 'Your audience is most active in the evenings. Schedule posts for 6-9 PM.', impact: '+25% engagement' },
+      { priority: 'medium', title: 'UGC Campaign', desc: 'User-generated content builds 2.8x more trust than branded assets.', impact: '+35% saves' }
+    ];
+
+    const archetypeMetaRecs = (archetype.recs || []).map(r => ({ priority: 'medium', ...r }));
+
+    renderRecs('metaRecs', isBrand && ctx.recs ? ctx.recs : [...defaultMetaRecs, ...archetypeMetaRecs].slice(0, 5));
   });
 }
 
@@ -650,7 +783,7 @@ function analyzePortfolio() {
         steps: ['Audit all images using Screaming Frog or manual check', 'Add descriptive alt text to 8+ images (include keywords naturally)', 'Convert all images to WebP format', 'Implement lazy loading for below-fold images', 'Set explicit width/height attributes to prevent layout shift', 'Compress remaining images to under 100KB each'],
         metrics: [{value:'-1.2s', label:'Load Time Cut', color:'var(--green)'}, {value:'8+', label:'Missing Alt Tags', color:'var(--red)'}, {value:'-40%', label:'File Size Reduction', color:'var(--green)'}, {value:'0.1', label:'CLS Improvement', color:'var(--blue-light)'}],
         timeline: '2-3 days', difficulty: 'Easy',
-        tools: ['TinyPNG / Squoosh', 'Screaming Frog', 'WebP Converter', 'Lighthouse'],
+        tools: ['TinyPNG / Squoosh', 'WebP Converter', 'Lighthouse'],
         proTip: 'Use descriptive alt text like "bridal makeup before and after transformation" instead of generic labels like "image1.jpg". Google Image Search drives 20%+ of salon traffic.' },
       { priority: 'high', title: 'Implement Schema Markup', desc: 'No structured data detected. Add LocalBusiness schema, Service schema, and Review schema to enable rich snippets in search results.', impact: '+30% search visibility',
         steps: ['Add LocalBusiness JSON-LD schema to homepage', 'Add Service schema for each service offered', 'Add AggregateRating schema with review data', 'Add BreadcrumbList schema for navigation', 'Validate using Google Rich Results Test tool', 'Monitor in Google Search Console for errors'],
@@ -694,12 +827,25 @@ function analyzeSEO() {
     return;
   }
 
+  const ctx = getContext(biz) || getContext(loc);
+
   simulateLoading('analyzeSeo', () => {
     document.getElementById('seoResults').classList.add('show');
+    showContextInfo('seoResults', ctx);
 
-    const seoScore = 55 + Math.floor(Math.random() * 25);
+    const archetype = ARCHETYPES[ctx.type] || ARCHETYPES.SALON_SPA;
+    const isBrand = ctx.contextType.includes('Brand');
 
-    renderKpis('seoKpis', [
+    const seoScore = isBrand ? ctx.seo.score : 55 + Math.floor(Math.random() * 25);
+
+    renderKpis('seoKpis', isBrand ? [
+      { label: 'SEO Score', value: ctx.seo.score, suffix: '/100', change: 'Expert Audited', changeDir: 'up' },
+      { label: 'GBP Completeness', value: ctx.seo.gbp_completeness, suffix: '%', change: 'Missing fields', changeDir: 'down' },
+      { label: 'Local Pack Rank', value: 4.0, suffix: '', change: 'Not in top 3', changeDir: 'down' },
+      { label: 'Review Count', value: ctx.seo.review_count, change: 'Below competitor avg', changeDir: 'down' },
+      { label: 'Avg. Rating', value: ctx.seo.rating, suffix: '★', change: 'Good rating', changeDir: 'up' },
+      { label: 'Citations Found', value: ctx.seo.citations, change: 'NAP issues detected', changeDir: 'down' },
+    ] : [
       { label: 'SEO Score', value: seoScore, suffix: '/100', change: seoScore >= 70 ? 'Good standing' : 'Needs work', changeDir: seoScore >= 70 ? 'up' : 'down' },
       { label: 'GBP Completeness', value: 72, suffix: '%', change: 'Missing fields', changeDir: 'down' },
       { label: 'Local Pack Rank', value: 4.0, suffix: '', change: 'Not in top 3', changeDir: 'down' },
@@ -736,7 +882,7 @@ function analyzeSEO() {
       { kw: `${biz.toLowerCase().includes('salon') ? 'facial spa' : 'consultation'} near ${loc}`, rank: 9, vol: '1,600', diff: 'Medium', trend: 'up' },
     ];
 
-    document.querySelector('#seoKeywordTable tbody').innerHTML = keywords.map(k => {
+    document.querySelector('#seoKeywordTable tbody').innerHTML = (ctx ? ctx.seo.keywords : keywords).map(k => {
       const rankClass = k.rank <= 3 ? 'badge-green' : k.rank <= 10 ? 'badge-blue' : k.rank <= 20 ? 'badge-orange' : 'badge-red';
       const diffClass = k.diff === 'Low' ? 'badge-green' : k.diff === 'Medium' ? 'badge-orange' : 'badge-red';
       return `
@@ -751,19 +897,18 @@ function analyzeSEO() {
     }).join('');
 
     // Competitors
-    const competitors = [
+    const defaultCompetitors = [
       { name: `🏆 ${biz}`, reviews: 48, rating: 4.3, photos: 24, posts: 2 },
-      { name: '🥈 Competitor A — StyleCraft Studio', reviews: 128, rating: 4.6, photos: 85, posts: 8 },
-      { name: '🥉 Competitor B — Urban Glow Salon', reviews: 92, rating: 4.4, photos: 62, posts: 5 },
-      { name: 'Competitor C — Luxe Beauty Lounge', reviews: 76, rating: 4.2, photos: 38, posts: 3 },
+      { name: '🥈 StyleCraft Studio', reviews: 128, rating: 4.6, photos: 85, posts: 8 },
+      { name: '🥉 Urban Glow Salon', reviews: 92, rating: 4.4, photos: 62, posts: 5 },
     ];
 
-    document.getElementById('competitorGrid').innerHTML = competitors.map((c, i) => `
+    document.getElementById('competitorGrid').innerHTML = (ctx && ctx.seo && ctx.seo.competitors ? ctx.seo.competitors : defaultCompetitors).map((c, i) => `
       <div class="comp-card" style="${i === 0 ? 'border-color:var(--blue);background:rgba(37,99,235,0.05)' : ''}">
         <div class="comp-name">${c.name}</div>
-        <div class="comp-stat"><span class="label">Reviews</span><span class="value ${c.reviews < 60 ? 'style=color:var(--red)' : ''}">${c.reviews}</span></div>
+        <div class="comp-stat"><span class="label">Reviews</span><span class="value">${c.reviews}</span></div>
         <div class="comp-stat"><span class="label">Rating</span><span class="value">${c.rating}★</span></div>
-        <div class="comp-stat"><span class="label">Photos</span><span class="value ${c.photos < 30 ? 'style=color:var(--orange)' : ''}">${c.photos}</span></div>
+        <div class="comp-stat"><span class="label">Photos</span><span class="value">${c.photos}</span></div>
         <div class="comp-stat"><span class="label">Posts/Month</span><span class="value">${c.posts}</span></div>
       </div>
     `).join('');
@@ -780,7 +925,7 @@ function analyzeSEO() {
           { label: 'Negative', data: [1, 0, 1, 2, 0, 1], backgroundColor: chartColors.red, borderRadius: 4 },
         ],
       },
-      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, legend: { labels: { color: '#7c8298', font: { family: 'Inter', size: 11 } } } } },
+      options: chartDefaults,
     });
 
     // Citation Consistency Chart
@@ -788,58 +933,24 @@ function analyzeSEO() {
     chartInstances['citationChart'] = new Chart(document.getElementById('citationChart'), {
       type: 'doughnut',
       data: {
-        labels: ['Consistent', 'Inconsistent Name', 'Inconsistent Address', 'Inconsistent Phone', 'Missing'],
+        labels: ['Consistent', 'Inconsistent', 'Missing'],
         datasets: [{
-          data: [7, 2, 1, 2, 3],
-          backgroundColor: [chartColors.green, chartColors.orange, chartColors.red, chartColors.purple, '#4b5563'],
+          data: [7, 3, 2],
+          backgroundColor: [chartColors.green, chartColors.orange, '#4b5563'],
           borderWidth: 0,
         }],
       },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'right', labels: { color: '#7c8298', font: { family: 'Inter', size: 10 }, padding: 8 } } },
-        cutout: '60%',
-      },
+      options: { responsive: true, maintainAspectRatio: false, cutout: '65%' },
     });
 
-    // SEO Recommendations
-    renderRecs('seoRecs', [
-      { priority: 'high', title: 'Fix NAP Inconsistencies Across Citations', desc: `Found 5 directories with inconsistent business name, address, or phone. Update listings on JustDial, Sulekha, IndiaMART, Yellow Pages, and Yelp to match your GBP exactly.`, impact: '+15-20% local pack visibility',
-        steps: ['Export current NAP data from Google Business Profile', 'Audit all 12 citations found — identify the 5 with mismatches', 'Log into JustDial, Sulekha, IndiaMART, Yellow Pages, Yelp', 'Update business name, address, and phone to match GBP exactly', 'Use same formatting everywhere ("Road" vs "Rd", etc.)', 'Re-verify after 2-4 weeks and check for new inconsistencies'],
-        metrics: [{value:'5', label:'Inconsistent Listings', color:'var(--red)'}, {value:'+20%', label:'Local Visibility', color:'var(--green)'}, {value:'100%', label:'NAP Match Goal', color:'var(--blue-light)'}, {value:'12', label:'Total Citations', color:'var(--text-primary)'}],
-        timeline: '1-2 weeks', difficulty: 'Medium',
-        tools: ['Moz Local', 'BrightLocal', 'Whitespark Citation Finder'],
-        proTip: 'Google cross-references your NAP across the web. Even minor differences like "1st Floor" vs "First Floor" can hurt your local ranking.' },
-      { priority: 'high', title: 'Increase Google Reviews to 100+', desc: `Currently at 48 reviews vs competitors averaging 99. Implement a review request workflow: send WhatsApp/SMS after each appointment with a direct review link.`, impact: '+2-3 positions in local pack',
-        steps: ['Generate your Google Review direct link from GBP', 'Create a WhatsApp template: "Thank you for visiting! We\'d love your feedback 🙏 [link]"', 'Train receptionist to send review request within 1 hour of service', 'Print QR code cards for in-salon placement', 'Respond to every existing review (positive and negative)', 'Set a weekly goal: 5 new reviews per week'],
-        metrics: [{value:'48→100+', label:'Review Target', color:'var(--green)'}, {value:'5/week', label:'New Reviews Goal', color:'var(--blue-light)'}, {value:'+3', label:'Local Pack Positions', color:'var(--green)'}, {value:'100%', label:'Response Rate Goal', color:'var(--text-primary)'}],
-        timeline: '2-3 months', difficulty: 'Easy',
-        tools: ['Google Business Profile', 'WhatsApp Business', 'QR Code Generator', 'Review Link Generator'],
-        proTip: 'Timing is everything — Send the review request within 1 hour of their visit when the experience is fresh. Response rate drops 80% after 24 hours.' },
-      { priority: 'high', title: 'Complete GBP Profile — Add Photos & Posts', desc: `Upload 50+ high-quality photos (interior, services, team, before/after). Publish Google Posts weekly with offers and updates. Competitors have 3x your photo count.`, impact: '+40% GBP engagement',
-        steps: ['Take professional photos: interior (5+), exterior (3+), team (5+), services in action (10+)', 'Capture before/after transformations (10+ sets)', 'Upload all photos with descriptive filenames and geo-tags', 'Create a Google Post every week: offers, new services, events', 'Add a cover photo and logo in correct dimensions', 'Add 360° virtual tour if possible (huge differentiator)'],
-        metrics: [{value:'24→50+', label:'Photo Target', color:'var(--green)'}, {value:'1/week', label:'Google Posts', color:'var(--blue-light)'}, {value:'+40%', label:'GBP Engagement', color:'var(--green)'}, {value:'3x', label:'Competitor Gap', color:'var(--red)'}],
-        timeline: '1-2 weeks', difficulty: 'Easy',
-        tools: ['Google Business Profile', 'Canva', 'Google Street View App', 'DSLR / iPhone Pro'],
-        proTip: 'Businesses with 100+ photos get 520% more calls and 2,717% more direction requests than average. Quality and quantity both matter.' },
-      { priority: 'medium', title: `Create Location-Specific Landing Pages`, desc: `Build dedicated pages targeting "${loc}" with location-specific content, embedded Google Map, local testimonials, and area-specific keywords.`, impact: '+25% organic traffic from local searches',
-        steps: [`Create a dedicated page: "Best Salon in ${loc}"`, 'Include location in title tag, H1, meta description, and body text', `Embed Google Maps iframe for ${loc} location`, 'Add 3-5 local client testimonials with names and areas', 'Include "Areas We Serve" section with nearby neighborhoods', `Add local schema markup with ${loc} address`],
-        metrics: [{value:'+25%', label:'Local Traffic', color:'var(--green)'}, {value:'1', label:'Pages to Create', color:'var(--blue-light)'}, {value:'Top 5', label:'Ranking Target', color:'var(--green)'}, {value:'+15', label:'Keywords Covered', color:'var(--text-primary)'}],
-        timeline: '1 week', difficulty: 'Medium',
-        tools: ['WordPress/HTML', 'Google Maps Embed', 'Yoast SEO', 'Schema Markup Generator'],
-        proTip: `Include the pattern "[Service] in ${loc}" throughout the page naturally. Google\'s Helpful Content Update rewards pages that genuinely serve local searchers.` },
-      { priority: 'medium', title: 'Add Secondary GBP Categories', desc: `Only 1 primary category set. Add 3-5 secondary categories (e.g. "Beauty Salon", "Hair Care", "Bridal Makeup Artist", "Spa") to appear in more relevant searches.`, impact: '+20% impression share',
-        steps: ['Log into Google Business Profile', 'Keep primary category as your main service', 'Add secondary categories: Beauty Salon, Hair Care, Bridal Makeup Artist, Spa, Skin Care Clinic', 'Research competitor categories using GBP tools', 'Monitor impression share changes in GBP Insights', 'Update categories seasonally (add "Gift Shop" for festivals)'],
-        metrics: [{value:'1→5+', label:'Categories', color:'var(--green)'}, {value:'+20%', label:'Impression Share', color:'var(--green)'}, {value:'5', label:'Categories to Add', color:'var(--blue-light)'}, {value:'+12', label:'New Search Matches', color:'var(--text-primary)'}],
-        timeline: '1-2 days', difficulty: 'Easy',
-        tools: ['Google Business Profile', 'PlePer GBP Tool', 'GMB Spy Chrome Extension'],
-        proTip: 'Use the GMB Spy extension to see what categories your top-ranking competitors use — this reveals categories that Google associates with strong local performance.' },
-      { priority: 'low', title: 'Build Local Backlinks', desc: `Get listed on local ${loc} business directories, partner with nearby businesses for cross-promotion, and sponsor local events for backlink opportunities.`, impact: '+Domain authority, long-term ranking boost',
-        steps: [`Submit to ${loc} local business directories and chamber of commerce`, 'Partner with complementary businesses (wedding planners, photographers) for link exchanges', 'Sponsor local events, college festivals, or community programs', 'Write guest posts for local blogs or news sites', 'Get featured in "Best of ${loc}" roundup articles', 'Create linkable assets (style guides, trend reports) on your website'],
-        metrics: [{value:'10+', label:'Backlink Target', color:'var(--blue-light)'}, {value:'+5', label:'Domain Authority', color:'var(--green)'}, {value:'3-6 mo', label:'Time to Results', color:'var(--orange)'}, {value:'Local', label:'Link Type Focus', color:'var(--text-primary)'}],
-        timeline: '3-6 months', difficulty: 'Hard',
-        tools: ['Ahrefs', 'Moz Link Explorer', 'HARO', 'Local Directories'],
-        proTip: 'One quality backlink from a local news site or chamber of commerce is worth more than 50 directory links. Focus on relationship-building over mass submissions.' },
-    ]);
+    // AI Recommendations
+    const defaultSeoRecs = [
+      { priority: 'high', title: 'Fix NAP Inconsistencies', desc: 'Found mismatches in your Business Name, Address, or Phone across directories.', impact: '+15-20% local pack visibility' },
+      { priority: 'high', title: 'Review Growth Strategy', desc: 'You need ~50 more reviews to catch up with top competitors.', impact: '+2-3 positions in local pack' }
+    ];
+
+    const archetypeSeoRecs = (archetype.recs || []).map(r => ({ priority: 'medium', ...r }));
+
+    renderRecs('seoRecs', isBrand && ctx.recs ? ctx.recs : [...defaultSeoRecs, ...archetypeSeoRecs].slice(0, 5));
   });
 }
