@@ -1,359 +1,269 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>NOVUS | Get In Touch</title>
-<link rel="icon" type="image/png" href="logo.png">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contact Us | Novus Devv - Get In Touch</title>
+  <meta name="description" content="Contact Novus Devv (Novus Innovates). Start your website engineering, 24/7 site management, commercial media shoot, or ads marketing campaign."/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
+  <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "on-background": "#0f172a",
-            "tertiary": "#ececec",
-            "tertiary-container": "#d0d0d0",
-            "on-primary": "#ffffff",
-            "surface-variant": "#f1f5f9",
-            "surface": "#ffffff",
-            "secondary-fixed-dim": "#c3c6d4",
-            "on-primary-fixed-variant": "#004f58",
-            "on-error": "#690005",
-            "on-error-container": "#ffdad6",
-            "outline-variant": "#3b494c",
-            "inverse-surface": "#0f172a",
-            "secondary-container": "#454955",
-            "on-secondary-fixed-variant": "#434652",
-            "on-primary-fixed": "#001f24",
-            "surface-bright": "#353944",
-            "surface-container-lowest": "#f8fafc",
-            "on-secondary": "#2c303b",
-            "primary-container": "#2563eb",
-            "surface-container-high": "#e2e8f0",
-            "secondary": "#c3c6d4",
-            "surface-container-low": "#f8fafc",
-            "surface-container": "#1c1f2a",
-            "error": "#ffb4ab",
-            "primary-fixed-dim": "#1d4ed8",
-            "outline": "#849396",
-            "on-tertiary": "#2f3131",
-            "error-container": "#93000a",
-            "surface-dim": "#ffffff",
-            "secondary-fixed": "#0f172a",
-            "on-primary-container": "#ffffff",
-            "on-secondary-fixed": "#f8fafc",
-            "surface-tint": "#1d4ed8",
-            "primary": "#c3f5ff",
-            "on-surface-variant": "#475569",
-            "on-secondary-container": "#b5b8c6",
-            "inverse-primary": "#006875",
-            "background": "#ffffff",
-            "on-tertiary-fixed": "#1a1c1c",
-            "surface-container-highest": "#f1f5f9",
-            "on-surface": "#0f172a",
-            "tertiary-fixed-dim": "#c6c6c7",
-            "on-tertiary-container": "#575959",
-            "inverse-on-surface": "#2c303b",
-            "tertiary-fixed": "#e2e2e2",
-            "on-tertiary-fixed-variant": "#454747",
-            "primary-fixed": "#9cf0ff"
-          },
-          fontFamily: {
-            "headline": ["Inter"],
-            "body": ["Inter"],
-            "label": ["Inter"]
-          },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
-        },
-      },
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #0f172a;
-    }
-
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-
-    .glass-panel {
-      background: rgba(248, 250, 252, 0.8);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(186, 201, 204, 0.1);
-    }
-
-    .kinetic-glow {
-      box-shadow: 0 0 40px rgba(37, 99, 235, 0.2);
-    }
-
-    .hero-gradient {
-      background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, rgba(255, 255, 255, 1) 70%);
-    }
-  </style>
-  <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-[#f4f7f4] text-[#1a2920] selection:bg-[#588157]/20 selection:text-[#2d4436]">
 
-<body class="selection:bg-primary-container selection:text-on-primary">
-  <!-- TopAppBar -->
-  <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-8 w-auto object-contain">
-<span class="text-blue-600 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
-</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
-<a class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 uppercase tracking-widest text-[0.6875rem] inline-block text-center flex-col justify-center">Get Started</a>
-<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-trigger">
-<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-</header>
-  <main class="pt-32 pb-24 hero-gradient overflow-hidden">
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-8 mb-24 relative">
-      <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full"></div>
-      <div class="relative z-10">
-        <label class="label-sm text-primary-container uppercase tracking-[0.2em] mb-4 block font-bold">Inquiry
-          Terminal</label>
-        <h1 class="font-['Inter'] font-black tracking-tighter text-display-lg text-5xl md:text-7xl lg:text-8xl mb-6 max-w-4xl">
-          Get In <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary-fixed-dim">Touch.</span>
-        </h1>
-        <p class="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed">
-          Let's build the future together. Whether you're initiating a system upgrade or a new venture, our kinetic
-          ether is open.
-        </p>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="site-container">
+      <div class="header-wrapper">
+        <a href="index.html" class="brand-logo">
+          <img src="logo.png" alt="Novus Devv Logo">
+          <span class="brand-name">NOVUS<span>DEVV</span></span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="nav-cta btn-cyan">Get Started</a>
+          <button class="hamburger-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-overlay">
+    <button id="close-menu" class="mobile-close-btn" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl text-[#2d4436]">close</span>
+    </button>
+    <div class="mb-4">
+      <img src="logo.png" alt="Novus Devv Logo" class="h-16 w-auto drop-shadow-[0_2px_10px_rgba(45,68,54,0.2)]">
+    </div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="text-[#2d4436] font-bold">Contact</a>
+    <a href="contact.html" class="btn-cyan mt-4">Start Project</a>
+  </div>
+
+  <main class="pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <!-- Contact Hero Header -->
+    <section class="mb-12 sm:mb-16 relative">
+      <div class="ambient-blob ambient-blob-cyan"></div>
+      <div class="ambient-blob ambient-blob-purple"></div>
+
+      <div class="site-container">
+        <div class="max-w-3xl space-y-4">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span>Inquiry Terminal</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold font-['Outfit'] leading-tight">
+            Get In <span class="text-gradient-multi">Touch.</span>
+          </h1>
+          <p class="text-[#4a5d50] text-base sm:text-lg leading-relaxed">
+            Let's build the future together. Whether you need a custom website, ongoing site care, a commercial video & photo shoot, or targeted ad campaigns, our studio is ready.
+          </p>
+        </div>
       </div>
     </section>
-    <!-- Contact Area -->
-    <section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-      <!-- Information List (Asymmetric Placement) -->
-      <div class="lg:col-span-5 space-y-8">
-        <div
-          class="glass-panel p-8 rounded-3xl kinetic-glow group hover:bg-surface-variant/60 transition-all duration-500">
-          <div class="flex items-start gap-6">
-            <div
-              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
-              <span class="material-symbols-outlined text-3xl">alternate_email</span>
-            </div>
-            <div>
-              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">Email</p>
-              <p class="text-[0.95rem] md:text-xl font-bold text-on-background"><a
-                  href="mailto:novusinnovates@gmail.com"
-                  class="hover:text-primary-container transition-colors">novusinnovates@gmail.com</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="glass-panel p-8 rounded-3xl group hover:bg-surface-variant/60 transition-all duration-500">
-          <div class="flex items-start gap-6">
-            <div
-              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
-              <span class="material-symbols-outlined text-3xl">phone_iphone</span>
-            </div>
-            <div>
-              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">Phone</p>
-              <p class="text-xl font-bold text-on-background"><a href="tel:+919741215675"
-                  class="hover:text-primary-container transition-colors">+91 9741215675</a><br /><a
-                  href="tel:+919964067671" class="hover:text-primary-container transition-colors">+91 9964067671</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="glass-panel p-8 rounded-3xl group hover:bg-surface-variant/60 transition-all duration-500">
-          <div class="flex items-start gap-6">
-            <div
-              class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary-container">
-              <span class="material-symbols-outlined text-3xl">group</span>
-            </div>
-            <div>
-              <p class="label-sm text-on-surface-variant uppercase tracking-widest mb-1">LinkedIn</p>
-              <p class="text-xl font-bold text-on-background"><a href="https://www.linkedin.com/in/rithvik-s-38b56b35b"
-                  target="_blank" class="hover:text-primary-container transition-colors">View Profile</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- Visual Texture Element -->
-        <div class="mt-12 opacity-30">
-          <img alt="Satellite view of digital data streams over Earth"
-            class="w-full h-48 object-cover rounded-3xl grayscale hover:grayscale-0 transition-all duration-700"
-            data-alt="Digital blue network patterns and glowing data streams overlaid on a dark satellite view of Earth at night"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVS6iYHDnsy3MVxo1iReqEzTPsSwLfgUK8SXflHFoho8lzdqSHZThyB3rikE4esTO6I64z87ehtxgWDMxT9b7XMBHO7mMkL6-TIqZDXd1Q1mourdkmkFFPnYMuqsaMQc7-Y4qjP61-reGaFvJQHJn-GvDo1Cig97bQOYos2tCuqUne6mCzR0h6-2bWk-4FYbWzLPsHhAfgvuJW6V3igxCriTuvVqvlqiiktovvuIKiOw14wN94DAYdvTKPGkEV6-99xXxSOTySx41n" />
-        </div>
-      </div>
-      <!-- Contact Form -->
-      <div class="lg:col-span-7">
-        <div class="glass-panel p-10 md:p-12 rounded-3xl relative overflow-hidden">
-          <!-- Background of form removed for light mode layout clarity -->
-          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container/5 blur-[80px] rounded-full"></div>
-          <form action="https://api.web3forms.com/submit" method="POST" class="relative z-10 space-y-8">
-            <input type="hidden" name="access_key" value="35152bdd-a652-42a0-b7cc-a0937b39c537">
-            <input type="hidden" name="redirect" value="https://novusinnovates.in/success.html">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="group">
-                <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Name</label>
-                <input name="name"
-                  class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant"
-                  placeholder="Your Name" required type="text" />
+
+    <!-- Main Contact Grid -->
+    <section class="py-4 sm:py-6">
+      <div class="site-container">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+
+          <!-- Left Info Cards Panel -->
+          <div class="lg:col-span-5 space-y-4 sm:space-y-6">
+            
+            <!-- Email Card -->
+            <div class="glass-card p-5 sm:p-6 flex items-start gap-4 sm:gap-5 group hover:border-[#2d4436]/20">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                <span class="material-symbols-outlined text-xl sm:text-2xl">alternate_email</span>
               </div>
-              <div class="group">
-                <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Email</label>
-                <input name="email"
-                  class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant"
-                  placeholder="email@domain.com" required type="email" />
+              <div class="overflow-hidden">
+                <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest mb-1 font-semibold">Direct Email</p>
+                <p class="font-bold text-sm sm:text-base text-[#1a2920] truncate">
+                  <a href="mailto:novusinnovates@gmail.com" class="hover:text-[#2d4436] transition-colors">
+                    novusinnovates@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
-            <div>
-              <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Phone Number</label>
-              <input name="phone"
-                class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant"
-                placeholder="+91 90000 00000" type="tel" />
+
+            <!-- Phone Card -->
+            <div class="glass-card p-5 sm:p-6 flex items-start gap-4 sm:gap-5 group hover:border-[#2d4436]/20">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                <span class="material-symbols-outlined text-xl sm:text-2xl">phone_iphone</span>
+              </div>
+              <div>
+                <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest mb-1 font-semibold">Call / WhatsApp</p>
+                <p class="font-bold text-sm sm:text-base text-[#1a2920] space-y-1">
+                  <a href="tel:+919741215675" class="block hover:text-[#2d4436] transition-colors">+91 9741215675</a>
+                  <a href="tel:+919964067671" class="block hover:text-[#2d4436] transition-colors">+91 9964067671</a>
+                </p>
+              </div>
             </div>
-            <div>
-              <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Service
-                Needed</label>
-              <select name="service"
-                class="w-full bg-surface-container-lowest border-r-4 border-surface-container-lowest border-l-2 focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all appearance-none cursor-pointer">
-                <option value="New Website And Website Management">New Website Build And Website Management</option>
-                <option value="Content Creation">Content Creation</option>
-                <option value="Ads/Marketing">Google Meta/Social Media Ads</option>
-                <option value="Other">Other</option>
-              </select>
+
+            <!-- LinkedIn Card -->
+            <div class="glass-card p-5 sm:p-6 flex items-start gap-4 sm:gap-5 group hover:border-[#2d4436]/20">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                <span class="material-symbols-outlined text-xl sm:text-2xl">group</span>
+              </div>
+              <div>
+                <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest mb-1 font-semibold">LinkedIn Network</p>
+                <p class="font-bold text-sm sm:text-base text-[#1a2920]">
+                  <a href="https://www.linkedin.com/in/rithvik-s-38b56b35b" target="_blank" class="hover:text-[#2d4436] transition-colors">
+                    Rithvik S (Founder Profile)
+                  </a>
+                </p>
+              </div>
             </div>
-            <div>
-              <label class="label-sm text-on-surface-variant uppercase tracking-widest mb-3 block">Message</label>
-              <textarea name="message"
-                class="w-full bg-surface-container-lowest border-l-2 border-transparent focus:border-primary-container text-on-background rounded-xl p-4 outline-none transition-all placeholder:text-outline-variant resize-none"
-                placeholder="Tell us about your project..." required rows="5"></textarea>
+
+            <!-- Agency Response SLA Box -->
+            <div class="glass-card p-5 sm:p-6 border-[#588157]/20 bg-[#eef3ef]/80">
+              <div class="flex items-center gap-3 mb-2 text-[#2d4436]">
+                <span class="material-symbols-outlined text-lg">verified</span>
+                <span class="font-mono text-xs font-bold uppercase tracking-widest">Guaranteed SLA Response</span>
+              </div>
+              <p class="text-[#4a5d50] text-xs leading-relaxed">
+                All submitted project inquiries are received directly by our founders and technical lead. Expect a response within 24 business hours.
+              </p>
             </div>
-            <button
-              class="w-full bg-gradient-to-r from-primary-container to-primary-fixed-dim text-on-primary-container font-black py-5 rounded-xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(0,229,255,0.2)] hover:shadow-[0_0_50px_rgba(0,229,255,0.4)] hover:scale-[1.01] active:scale-[0.98] transition-all duration-300"
-              type="submit">
-              Send Message
-            </button>
-          </form>
+
+          </div>
+
+          <!-- Right Web3Forms Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="glass-card p-6 sm:p-10 md:p-12 glow-border relative">
+              <h2 class="text-xl sm:text-2xl font-bold font-['Outfit'] mb-6">Send A Message</h2>
+
+              <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5 sm:space-y-6">
+                <!-- Web3Forms Access Key & Redirect -->
+                <input type="hidden" name="access_key" value="35152bdd-a652-42a0-b7cc-a0937b39c537">
+                <input type="hidden" name="redirect" value="https://novusinnovates.in/success.html">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                  <div>
+                    <label class="block font-mono text-xs text-[#2d4436] uppercase tracking-widest mb-2 font-bold">Your Name *</label>
+                    <input name="name" class="form-control" placeholder="John Doe" required type="text" />
+                  </div>
+                  <div>
+                    <label class="block font-mono text-xs text-[#2d4436] uppercase tracking-widest mb-2 font-bold">Email Address *</label>
+                    <input name="email" class="form-control" placeholder="john@example.com" required type="email" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block font-mono text-xs text-[#2d4436] uppercase tracking-widest mb-2 font-bold">Phone Number</label>
+                  <input name="phone" class="form-control" placeholder="+91 90000 00000" type="tel" />
+                </div>
+
+                <div>
+                  <label class="block font-mono text-xs text-[#2d4436] uppercase tracking-widest mb-2 font-bold">Service Pillar Needed *</label>
+                  <select name="service" id="service-select" class="form-control" required>
+                    <option value="Website Build & Engineering">Website Build & Engineering</option>
+                    <option value="Website Management & Support">Website Management & 24/7 Support</option>
+                    <option value="Media & Content Production">Media & Content Production (Shoots, Edits, Reels)</option>
+                    <option value="Social Media & Ads Marketing">Social Media & Ads Marketing (Google/Meta Ads)</option>
+                    <option value="Full Stack Custom Package">Full-Stack Custom Package / Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block font-mono text-xs text-[#2d4436] uppercase tracking-widest mb-2 font-bold">Project Details *</label>
+                  <textarea name="message" class="form-control" placeholder="Tell us about your project goals, timeline, and requirements..." required rows="5"></textarea>
+                </div>
+
+                <button class="btn-cyan w-full py-4 text-center justify-center font-bold tracking-widest" type="submit">
+                  Send Message Now
+                </button>
+              </form>
+            </div>
+          </div>
+
         </div>
-        <p class="mt-8 text-on-surface-variant text-sm text-center md:text-left opacity-60">
-          *Transmission secured via 256-bit kinetic encryption. Estimated response within 24 cycles.
-        </p>
       </div>
     </section>
   </main>
+
   <!-- Footer -->
-  <footer class="w-full rounded-t-[2rem] mt-20 bg-slate-50 border-t border-slate-200">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 max-w-7xl mx-auto gap-8">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-6 w-auto object-contain">
-<span class="text-blue-600 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
-</a>
-<p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
-    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
-</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="index.html">Home</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="services.html">Services</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="about.html">About</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="contact.html">Contact</a>
-</div>
-<div class="flex flex-col items-center md:items-end gap-4">
-<div class="flex gap-6">
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">public</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">share</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">terminal</span>
-</a>
-</div>
-<span class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium opacity-60">© 2025 Novus Devv. All rights reserved.</span>
-</div>
-</div>
-</footer>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#ffffff]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
-        <button id="close-menu" class="absolute top-6 right-8 text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <div class="flex flex-col items-center gap-10 w-full">
-            <a href="index.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Home</a>
-            <a href="services.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Services</a>
-            <a href="about.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">About</a>
-            <a href="contact.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Contact</a>
-            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-blue-600 to-blue-700 text-white font-black rounded-full text-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] tracking-widest uppercase">Start Project</a>
+  <footer class="app-footer">
+    <div class="site-container">
+      <div class="footer-top">
+        <div class="space-y-4 max-w-sm">
+          <a href="index.html" class="brand-logo">
+            <img src="logo.png" alt="Novus Devv Logo">
+            <span class="brand-name">NOVUS<span>DEVV</span></span>
+          </a>
+          <p class="text-[#4a5d50] text-xs leading-relaxed">
+            Novus Devv (Novus Innovates) — Technical website engineering, 24/7 site management, commercial media production, and high-ROI ads marketing.
+          </p>
         </div>
+
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025-2026 Novus Devv / Novus Innovates. All rights reserved.</span>
+        <span>Founders: Rithvik S, Shivaan Gowda D, Jaya Shanker</span>
+      </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuTrigger = document.getElementById('mobile-menu-trigger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeBtn = document.getElementById('close-menu');
-            
-            if (menuTrigger && mobileMenu && closeBtn) {
-                menuTrigger.addEventListener('click', () => {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    // Force reflow
-                    mobileMenu.offsetHeight;
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                });
-                
-                const closeMenu = () => {
-                    mobileMenu.classList.remove('opacity-100');
-                    mobileMenu.classList.add('opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('flex');
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                };
+  </footer>
 
-                closeBtn.addEventListener('click', closeMenu);
-                
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
+  <!-- Script for Mobile Menu Overlay & URL Query Parameter pre-selection -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu logic
+      const menuTrigger = document.getElementById('mobile-menu-trigger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('close-menu');
+
+      if (menuTrigger && mobileMenu && closeBtn) {
+        menuTrigger.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
         });
-    </script>
 
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Auto-select dropdown from URL query parameter (e.g. ?service=media)
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceParam = urlParams.get('service');
+      const serviceSelect = document.getElementById('service-select');
+
+      if (serviceParam && serviceSelect) {
+        if (serviceParam === 'media') {
+          serviceSelect.value = 'Media & Content Production';
+        } else if (serviceParam === 'management') {
+          serviceSelect.value = 'Website Management & Support';
+        } else if (serviceParam === 'marketing') {
+          serviceSelect.value = 'Social Media & Ads Marketing';
+        } else if (serviceParam === 'website') {
+          serviceSelect.value = 'Website Build & Engineering';
+        }
+      }
+    });
+  </script>
 </body>
-
 </html>

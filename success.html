@@ -1,20 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Sent | Novus Devv</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; padding: 20px;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Received | Novus Devv</title>
+  <meta name="description" content="Thank you for contacting Novus Devv. We have received your inquiry and will be in touch shortly."/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-    <div class="card" style="max-width: 500px;">
-        <h1 style="color: var(--primary); margin-bottom: 1rem;">Message Sent!</h1>
-        <p style="margin-bottom: 2rem;">Thank you for contacting Novus Devv. We have received your request and will reply within 24 hours.</p>
-        <a href="index.html" class="btn">Grow More.</a>
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f4f7f4] text-[#1a2920] min-h-screen flex items-center justify-center p-4 sm:p-6 selection:bg-[#588157]/20 selection:text-[#2d4436]">
+
+  <div class="ambient-blob ambient-blob-cyan"></div>
+  <div class="ambient-blob ambient-blob-purple"></div>
+
+  <div class="glass-card p-8 sm:p-12 md:p-14 max-w-lg w-full text-center space-y-6 glow-border relative z-10">
+    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#2d4436]/10 border border-[#2d4436]/20 text-[#2d4436] mx-auto flex items-center justify-center shadow-lg shadow-[#2d4436]/10">
+      <span class="material-symbols-outlined text-4xl sm:text-5xl">check_circle</span>
     </div>
 
-</body>
+    <div class="space-y-2">
+      <span class="badge-pill">Transmission Received</span>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] text-[#1a2920]">Message Sent!</h1>
+    </div>
 
+    <p class="text-[#4a5d50] text-xs sm:text-sm leading-relaxed">
+      Thank you for reaching out to Novus Devv. Our founders and technical lead have received your inquiry and will respond within 24 hours.
+    </p>
+
+    <div class="pt-2 sm:pt-4">
+      <a href="index.html" class="btn-cyan w-full justify-center">
+        Return To Homepage
+      </a>
+    </div>
+  </div>
+
+</body>
 </html>

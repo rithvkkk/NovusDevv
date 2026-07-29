@@ -1,283 +1,331 @@
 <!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Our Services | Novus Devv - Web Engineering, Media & Marketing</title>
+  <meta name="description" content="Explore Novus Devv service capabilities: Website Engineering, Ongoing Site Management, Commercial Media Production & Video Editing, and High-ROI Ads Marketing."/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Our Services | Novus Devv</title>
-<link rel="icon" type="image/png" href="logo.png">
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f4f7f4] text-[#1a2920] selection:bg-[#588157]/20 selection:text-[#2d4436]">
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "secondary": "#c3c6d4",
-              "inverse-surface": "#0f172a",
-              "on-secondary-fixed-variant": "#434652",
-              "on-background": "#0f172a",
-              "on-tertiary-container": "#575959",
-              "surface-container-high": "#e2e8f0",
-              "background": "#ffffff",
-              "surface-bright": "#353944",
-              "secondary-container": "#454955",
-              "surface-container-low": "#f8fafc",
-              "on-surface": "#0f172a",
-              "on-primary-fixed": "#001f24",
-              "surface-dim": "#ffffff",
-              "on-primary": "#ffffff",
-              "on-tertiary": "#2f3131",
-              "tertiary-container": "#d0d0d0",
-              "on-secondary-fixed": "#f8fafc",
-              "surface-container-highest": "#f1f5f9",
-              "on-primary-container": "#ffffff",
-              "inverse-on-surface": "#2c303b",
-              "error-container": "#93000a",
-              "tertiary-fixed": "#e2e2e2",
-              "surface-container-lowest": "#f8fafc",
-              "on-surface-variant": "#475569",
-              "surface": "#ffffff",
-              "on-secondary-container": "#b5b8c6",
-              "error": "#ffb4ab",
-              "tertiary-fixed-dim": "#c6c6c7",
-              "secondary-fixed-dim": "#c3c6d4",
-              "on-error-container": "#ffdad6",
-              "primary": "#c3f5ff",
-              "primary-fixed": "#9cf0ff",
-              "surface-container": "#1c1f2a",
-              "primary-container": "#2563eb",
-              "outline": "#849396",
-              "primary-fixed-dim": "#1d4ed8",
-              "on-tertiary-fixed-variant": "#454747",
-              "surface-tint": "#1d4ed8",
-              "inverse-primary": "#006875",
-              "tertiary": "#ececec",
-              "outline-variant": "#3b494c",
-              "on-primary-fixed-variant": "#004f58",
-              "surface-variant": "#f1f5f9",
-              "on-tertiary-fixed": "#1a1c1c",
-              "on-error": "#690005",
-              "secondary-fixed": "#0f172a",
-              "on-secondary": "#2c303b"
-            },
-            fontFamily: {
-              "headline": ["Inter"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-        body {
-            background-color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            color: #0f172a;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(132, 147, 150, 0.1);
-        }
-        .kinetic-glow {
-            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="selection:bg-primary-container selection:text-on-primary">
-<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-8 w-auto object-contain">
-<span class="text-blue-600 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
-</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
-<a class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 uppercase tracking-widest text-[0.6875rem] inline-block text-center flex-col justify-center">Get Started</a>
-<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-trigger">
-<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-</header>
-<main class="pt-32 pb-20">
-<section class="max-w-7xl mx-auto px-8 mb-32">
-<div class="flex flex-col md:flex-row items-end gap-8">
-<div class="w-full md:w-2/3">
-<span class="label-sm uppercase tracking-[0.2em] text-blue-600 font-bold mb-4 block">Engineered Excellence</span>
-<h1 class="text-4xl md:text-[5rem] font-black leading-[0.9] tracking-tighter text-on-background mb-8">
-                        Our <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary-container to-primary-fixed-dim">Services</span>
-</h1>
-<p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl leading-relaxed">
-                        Code. Manage. Grow. We deliver high-fidelity websites, engaging content, and data-driven marketing to scale your brand.
-                    </p>
-</div>
-<div class="hidden md:block w-1/3 text-right">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant/20 bg-surface-container-low">
-<span class="flex h-2 w-2 rounded-full bg-primary-container animate-pulse"></span>
-<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Live Innovation Stream</span>
-</div>
-</div>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-<div class="glass-panel p-10 rounded-3xl group hover:bg-surface-container-high transition-all duration-500 kinetic-glow relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary-container/10 transition-colors"></div>
-<div class="mb-8 bg-surface-container-lowest w-16 h-16 rounded-2xl flex items-center justify-center text-primary-container border border-outline-variant/10">
-<span class="material-symbols-outlined text-4xl" data-icon="code">code</span>
-</div>
-<h3 class="text-2xl font-bold text-on-background mb-4">Website Build & Engineering</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8">End-to-end web development focusing on stunning design, clean code, and blazing-fast performance to establish your digital presence.</p>
-</div>
-
-<div class="glass-panel p-10 rounded-3xl group hover:bg-surface-container-high transition-all duration-500 kinetic-glow relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary-container/10 transition-colors"></div>
-<div class="mb-8 bg-surface-container-lowest w-16 h-16 rounded-2xl flex items-center justify-center text-primary-container border border-outline-variant/10">
-<span class="material-symbols-outlined text-4xl" data-icon="settings">settings</span>
-</div>
-<h3 class="text-2xl font-bold text-on-background mb-4">Website Management</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8">Ongoing support, security updates, performance tuning, and content management to ensure your digital assets run smoothly 24/7.</p>
-</div>
-
-<div class="glass-panel p-10 rounded-3xl group hover:bg-surface-container-high transition-all duration-500 kinetic-glow relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary-container/10 transition-colors"></div>
-<div class="mb-8 bg-surface-container-lowest w-16 h-16 rounded-2xl flex items-center justify-center text-primary-container border border-outline-variant/10">
-<span class="material-symbols-outlined text-4xl" data-icon="draw">draw</span>
-</div>
-<h3 class="text-2xl font-bold text-on-background mb-4">Content Creation</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8">High-fidelity visuals, compelling copywriting, and engaging multimedia designed to captivate your audience and tell your brand story.</p>
-</div>
-
-<div class="glass-panel p-10 rounded-3xl group hover:bg-surface-container-high transition-all duration-500 kinetic-glow relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary-container/10 transition-colors"></div>
-<div class="mb-8 bg-surface-container-lowest w-16 h-16 rounded-2xl flex items-center justify-center text-primary-container border border-outline-variant/10">
-<span class="material-symbols-outlined text-4xl" data-icon="campaign">campaign</span>
-</div>
-<h3 class="text-2xl font-bold text-on-background mb-4">Social Media & Ads Marketing</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8">Targeted Google and Meta/Social Media ad campaigns mixed with organic growth strategies to scale your reach and maximize ROI.</p>
-</div>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-8 mt-40">
-<div class="relative rounded-3xl overflow-hidden aspect-[21/9] flex items-center px-12">
-<img alt="Global connectivity network" class="absolute inset-0 w-full h-full object-cover opacity-40" data-alt="high-tech digital world map with glowing blue data points and connections against a dark background with atmospheric cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsiX7DHELthRtXerWqU5hhHlFng2TN8AtPUF26dWvXBN2wiiLfeg3728RT-gLOdsKruinHr72pwn9ZMxFnsdZiLxKmdlCmL0e9sROfpeWxh7gRDAwSzWoTE5Yfc0VU5fguPOaDiTZTfpj6sBAzzqGwtDzEoVYe2qU-f7DQ6lZTQXqnrRD9zVyp7vPtpZlvN8zSD0IEKrJx5HF7b7PJ-K4c0wp6bU2TKUjd_t8Wq-2kXDozm3Ra3zQm0-X-O_frJM8582epSZI_egl6"/>
-<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
-<div class="relative z-10 max-w-lg">
-<h2 class="text-4xl font-black mb-6">Ready to scale your next big idea?</h2>
-<p class="text-on-surface-variant mb-8 font-medium">Connect with our engineering leads to discuss your project requirements.</p>
-<a href="contact.html" class="bg-primary-container text-on-primary px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform duration-300 inline-block text-center flex-col justify-center">Book a Consultation</a>
-</div>
-</div>
-</section>
-</main>
-<footer class="w-full rounded-t-[2rem] mt-20 bg-slate-50 border-t border-slate-200">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 max-w-7xl mx-auto gap-8">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-6 w-auto object-contain">
-<span class="text-blue-600 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
-</a>
-<p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
-    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
-</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="index.html">Home</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="services.html">Services</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="about.html">About</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="contact.html">Contact</a>
-</div>
-<div class="flex flex-col items-center md:items-end gap-4">
-<div class="flex gap-6">
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">public</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">share</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">terminal</span>
-</a>
-</div>
-<span class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium opacity-60">© 2025 Novus Devv. All rights reserved.</span>
-</div>
-</div>
-</footer>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#ffffff]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
-        <button id="close-menu" class="absolute top-6 right-8 text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <div class="flex flex-col items-center gap-10 w-full">
-            <a href="index.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Home</a>
-            <a href="services.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Services</a>
-            <a href="about.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">About</a>
-            <a href="contact.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Contact</a>
-            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-blue-600 to-blue-700 text-white font-black rounded-full text-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] tracking-widest uppercase">Start Project</a>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="site-container">
+      <div class="header-wrapper">
+        <a href="index.html" class="brand-logo">
+          <img src="logo.png" alt="Novus Devv Logo">
+          <span class="brand-name">NOVUS<span>DEVV</span></span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="services.html">Services</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="nav-cta btn-cyan">Get Started</a>
+          <button class="hamburger-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
         </div>
+      </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuTrigger = document.getElementById('mobile-menu-trigger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeBtn = document.getElementById('close-menu');
-            
-            if (menuTrigger && mobileMenu && closeBtn) {
-                menuTrigger.addEventListener('click', () => {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    // Force reflow
-                    mobileMenu.offsetHeight;
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                });
-                
-                const closeMenu = () => {
-                    mobileMenu.classList.remove('opacity-100');
-                    mobileMenu.classList.add('opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('flex');
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                };
+  </header>
 
-                closeBtn.addEventListener('click', closeMenu);
-                
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-overlay">
+    <button id="close-menu" class="mobile-close-btn" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl text-[#2d4436]">close</span>
+    </button>
+    <div class="mb-4">
+      <img src="logo.png" alt="Novus Devv Logo" class="h-16 w-auto drop-shadow-[0_2px_10px_rgba(45,68,54,0.2)]">
+    </div>
+    <a href="index.html">Home</a>
+    <a href="services.html" class="text-[#2d4436] font-bold">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-cyan mt-4">Start Project</a>
+  </div>
+
+  <main class="pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <!-- Services Header Section -->
+    <section class="mb-12 sm:mb-20 relative">
+      <div class="ambient-blob ambient-blob-cyan"></div>
+      <div class="site-container">
+        <div class="max-w-3xl space-y-4">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span>Integrated Offerings</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold font-['Outfit'] leading-tight">
+            Engineered Software & <br/>
+            <span class="text-gradient-multi">Creative Media Production.</span>
+          </h1>
+          <p class="text-[#4a5d50] text-base sm:text-lg leading-relaxed">
+            An integrated ecosystem of web development, ongoing site infrastructure care, commercial media production, and performance marketing designed to scale your business with clarity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Deep-Dive Cards Grid -->
+    <section class="py-6">
+      <div class="site-container space-y-8 sm:space-y-10">
+        
+        <!-- Service 1: Website Engineering -->
+        <div class="glass-card p-6 sm:p-10 md:p-12 glow-border">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+            <div class="lg:col-span-8 space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                  <span class="material-symbols-outlined text-2xl sm:text-3xl">code</span>
+                </div>
+                <div>
+                  <span class="text-xs font-mono uppercase tracking-widest text-[#2d4436] font-bold">Pillar 01</span>
+                  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-['Outfit']">Website Build & Engineering</h2>
+                </div>
+              </div>
+              <p class="text-[#4a5d50] leading-relaxed text-sm sm:text-base">
+                We design and build bespoke, high-performance web applications and responsive marketing sites tailored to your brand identity. Built using clean, modern code standards, our solutions ensure lightning-fast page speed, seamless mobile user experiences, and solid accessibility.
+              </p>
+              <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-[#2d4436] mb-3 font-bold">Key Deliverables:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-item">Custom UI/UX Wireframing & Design</span>
+                  <span class="tag-item">React / Vite & HTML5 Web Development</span>
+                  <span class="tag-item">Responsive Mobile-First Architecture</span>
+                  <span class="tag-item">Core Web Vitals & LCP Speed Tuning</span>
+                  <span class="tag-item">SEO Infrastructure & Schema Metadata</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex justify-start lg:justify-end">
+              <a href="contact.html?service=website" class="btn-cyan w-full sm:w-auto">
+                Request Engineering Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Website Management -->
+        <div class="glass-card p-6 sm:p-10 md:p-12 glow-border">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+            <div class="lg:col-span-8 space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                  <span class="material-symbols-outlined text-2xl sm:text-3xl">shield</span>
+                </div>
+                <div>
+                  <span class="text-xs font-mono uppercase tracking-widest text-[#2d4436] font-bold">Pillar 02</span>
+                  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-['Outfit']">Website Management & Care</h2>
+                </div>
+              </div>
+              <p class="text-[#4a5d50] leading-relaxed text-sm sm:text-base">
+                Never worry about site downtime, broken links, or security vulnerabilities. Our dedicated management service offers around-the-clock monitoring, automated cloud backups, security patching, and fast-turnaround content updates so your digital platform remains secure and active.
+              </p>
+              <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-[#2d4436] mb-3 font-bold">Key Deliverables:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-item">24/7 Uptime & Health Monitoring</span>
+                  <span class="tag-item">Automated Daily Cloud Backups</span>
+                  <span class="tag-item">Security Patching & SSL Certificates</span>
+                  <span class="tag-item">Continuous Content & Asset Updates</span>
+                  <span class="tag-item">Domain & DNS Management</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex justify-start lg:justify-end">
+              <a href="contact.html?service=management" class="btn-cyan w-full sm:w-auto">
+                Get Management Plan
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Media & Content Production -->
+        <div class="glass-card bento-card-inner p-6 sm:p-10 md:p-12 glow-border border-[#588157]/30">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+            <div class="lg:col-span-8 space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#436b53]/10 border border-[#436b53]/20 flex items-center justify-center text-[#436b53] shrink-0">
+                  <span class="material-symbols-outlined text-2xl sm:text-3xl">movie_filter</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono uppercase tracking-widest text-[#436b53] font-bold">Pillar 03</span>
+                    <span class="badge-pill badge-pill-purple text-[9px] py-0.5 px-2">EXPANDED CAPABILITIES</span>
+                  </div>
+                  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-['Outfit'] text-[#1a2920]">Media & Content Production</h2>
+                </div>
+              </div>
+              <p class="text-[#4a5d50] leading-relaxed text-sm sm:text-base">
+                Bring your brand to life with professional media production. We execute commercial photography shoots, 4K video capture, short-form Instagram Reels & YouTube Shorts editing, color grading, motion graphics, and graphic design kits designed to grab immediate consumer attention.
+              </p>
+              <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-[#2d4436] mb-3 font-bold">Key Deliverables:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-item">Commercial & Product Shoots</span>
+                  <span class="tag-item">Professional Video Editing & Post-Production</span>
+                  <span class="tag-item">Instagram Reels & TikTok Content Kits</span>
+                  <span class="tag-item">Cinematic Color Grading & Motion FX</span>
+                  <span class="tag-item">Brand Graphic Design & Ad Banners</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex justify-start lg:justify-end">
+              <a href="contact.html?service=media" class="btn-cyan w-full sm:w-auto">
+                Book Media Shoot
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Social Media & Ads Marketing -->
+        <div class="glass-card p-6 sm:p-10 md:p-12 glow-border">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+            <div class="lg:col-span-8 space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                  <span class="material-symbols-outlined text-2xl sm:text-3xl">trending_up</span>
+                </div>
+                <div>
+                  <span class="text-xs font-mono uppercase tracking-widest text-[#2d4436] font-bold">Pillar 04</span>
+                  <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-['Outfit']">Social Media & Ads Marketing</h2>
+                </div>
+              </div>
+              <p class="text-[#4a5d50] leading-relaxed text-sm sm:text-base">
+                Turn website traffic into active paying customers. We build high-ROI Google Search Ads and Meta/Instagram ad campaigns backed by precise demographical targeting, A/B creative testing, and transparent analytics to maximize your return on ad spend (ROAS).
+              </p>
+              <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-[#2d4436] mb-3 font-bold">Key Deliverables:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-item">Google Search & Display Campaign Setup</span>
+                  <span class="tag-item">Meta (Instagram / Facebook) Ad Management</span>
+                  <span class="tag-item">Audience Segmentation & Retargeting</span>
+                  <span class="tag-item">Conversion Tracking & Pixel Integration</span>
+                  <span class="tag-item">Monthly Performance & ROI Reports</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex justify-start lg:justify-end">
+              <a href="contact.html?service=marketing" class="btn-cyan w-full sm:w-auto">
+                Launch Ads Campaign
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack & Tools Showcase -->
+    <section class="py-16 sm:py-20 relative">
+      <div class="site-container">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-3">
+          <span class="badge-pill">Technology & Creative Stack</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-['Outfit']">Tools & Standards We Master</h2>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#2d4436]">code</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">React & Vite</p>
+          </div>
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#2d4436]">palette</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">Figma & UI</p>
+          </div>
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#436b53]">movie</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">DaVinci / Premiere</p>
+          </div>
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#436b53]">photo_camera</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">4K Shoots</p>
+          </div>
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#2d4436]">ads_click</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">Google Ads</p>
+          </div>
+          <div class="glass-card p-5 sm:p-6 text-center space-y-2">
+            <span class="material-symbols-outlined text-2xl sm:text-3xl text-[#2d4436]">query_stats</span>
+            <p class="font-mono text-xs font-bold text-[#1a2920]">Meta Business</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Teaser -->
+    <section class="py-12 sm:py-16">
+      <div class="site-container">
+        <div class="glass-card p-8 sm:p-12 text-center glow-border">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] mb-4">Need A Custom Package?</h3>
+          <p class="text-[#4a5d50] max-w-xl mx-auto mb-6 text-sm leading-relaxed">
+            Combine Website Engineering, Media Production, and Marketing for a tailored bundle built around your business goals.
+          </p>
+          <a href="contact.html" class="btn-cyan w-full sm:w-auto">Talk To Founders</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="site-container">
+      <div class="footer-top">
+        <div class="space-y-4 max-w-sm">
+          <a href="index.html" class="brand-logo">
+            <img src="logo.png" alt="Novus Devv Logo">
+            <span class="brand-name">NOVUS<span>DEVV</span></span>
+          </a>
+          <p class="text-[#4a5d50] text-xs leading-relaxed">
+            Novus Devv (Novus Innovates) — Technical website engineering, 24/7 site management, commercial media production, and high-ROI ads marketing.
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025-2026 Novus Devv / Novus Innovates. All rights reserved.</span>
+        <span>Founders: Rithvik S, Shivaan Gowda D, Jaya Shanker</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Overlay -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuTrigger = document.getElementById('mobile-menu-trigger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('close-menu');
+
+      if (menuTrigger && mobileMenu && closeBtn) {
+        menuTrigger.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
         });
-    </script>
 
-</body></html>
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

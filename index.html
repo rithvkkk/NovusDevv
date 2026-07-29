@@ -1,338 +1,424 @@
 <!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Novus Devv | Craft. Edit. Scale. Digital & Media Studio</title>
+  <meta name="description" content="Novus Devv is a creative digital studio specializing in Website Engineering, 24/7 Site Management, Media & Video Content Production, and High-ROI Ads Marketing."/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Novus Devv | Innovating the Future</title>
-<link rel="icon" type="image/png" href="logo.png">
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f4f7f4] text-[#1a2920] selection:bg-[#588157]/20 selection:text-[#2d4436]">
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-primary-container": "#ffffff",
-              "secondary-fixed": "#0f172a",
-              "on-tertiary-fixed": "#1a1c1c",
-              "surface-dim": "#ffffff",
-              "on-secondary-container": "#b5b8c6",
-              "tertiary-fixed-dim": "#c6c6c7",
-              "secondary": "#c3c6d4",
-              "inverse-surface": "#0f172a",
-              "tertiary": "#ececec",
-              "outline-variant": "#3b494c",
-              "surface-container-low": "#f8fafc",
-              "on-primary-fixed": "#001f24",
-              "surface-variant": "#f1f5f9",
-              "surface-bright": "#353944",
-              "tertiary-container": "#d0d0d0",
-              "on-secondary-fixed-variant": "#434652",
-              "error": "#ffb4ab",
-              "surface-container-high": "#e2e8f0",
-              "surface-tint": "#1d4ed8",
-              "on-surface": "#0f172a",
-              "primary-fixed-dim": "#1d4ed8",
-              "on-background": "#0f172a",
-              "on-secondary-fixed": "#f8fafc",
-              "outline": "#849396",
-              "secondary-container": "#454955",
-              "on-secondary": "#2c303b",
-              "on-tertiary": "#2f3131",
-              "error-container": "#93000a",
-              "on-surface-variant": "#475569",
-              "background": "#ffffff",
-              "on-tertiary-container": "#575959",
-              "secondary-fixed-dim": "#c3c6d4",
-              "inverse-primary": "#006875",
-              "on-primary-fixed-variant": "#004f58",
-              "tertiary-fixed": "#e2e2e2",
-              "surface-container-lowest": "#f8fafc",
-              "inverse-on-surface": "#2c303b",
-              "on-tertiary-fixed-variant": "#454747",
-              "surface-container": "#1c1f2a",
-              "on-error-container": "#ffdad6",
-              "primary-fixed": "#9cf0ff",
-              "on-primary": "#ffffff",
-              "primary-container": "#2563eb",
-              "primary": "#c3f5ff",
-              "on-error": "#690005",
-              "surface-container-highest": "#f1f5f9",
-              "surface": "#ffffff"
-            },
-            fontFamily: {
-              "headline": ["Inter"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-      body {
-        background-color: #ffffff;
-        color: #0f172a;
-        font-family: 'Inter', sans-serif;
-      }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-panel {
-        background: rgba(248, 250, 252, 0.8);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-      }
-      .glow-shadow {
-        box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
-      }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-8 w-auto object-contain">
-<span class="text-blue-600 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
-</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 uppercase tracking-widest text-[0.6875rem] inline-block text-center flex-col justify-center">Get Started</a>
-<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-trigger">
-<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-</header>
-<main>
-<!-- Hero Section -->
-<section class="relative pt-44 pb-24 px-8 overflow-hidden min-h-screen flex items-center">
-<!-- Background Decorative Elements -->
-<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary-container/10 rounded-full blur-[120px]"></div>
-<div class="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-surface-container-highest/30 rounded-full blur-[100px]"></div>
-<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20">
-<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary-container">Digital Agency</span>
-</div>
-<h1 class="font-['Inter'] font-black tracking-tight text-4xl md:text-8xl text-on-background leading-[0.9]">
-                        Code. <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-blue-600 to-slate-800">Manage. Grow.</span>
-</h1>
-<p class="text-on-surface-variant text-xl md:text-2xl max-w-xl leading-relaxed">
-                        Your dedicated technical partner for building stunning digital assets, creating high-impact content, and scaling through strategic marketing.
-                    </p>
-<div class="flex flex-wrap gap-6 pt-4">
-<a href="services.html"  class="px-10 py-4 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-extrabold rounded-3xl active:scale-95 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/25" inline-block text-center flex-col justify-center>Explore Services</a>
-<a href="about.html"  class="px-10 py-4 border-2 border-outline-variant/30 text-on-surface font-bold rounded-3xl hover:bg-slate-100 transition-all duration-300 active:scale-95" inline-block text-center flex-col justify-center>Our Story</a>
-</div>
-</div>
-<div class="relative group">
-<div class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-blue-500/20 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-<div class="relative aspect-square rounded-3xl overflow-hidden border border-slate-300 glass-panel flex items-center justify-center">
-<img alt="Innovative visualization" class="w-full h-full object-cover mix-blend-luminosity opacity-60 hover:opacity-90 transition-opacity duration-700" data-alt="abstract 3d digital visualization of flowing data particles and glowing geometric structures in deep space environment with cyan accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6_ZcOz9CLmB8Ag83jL-7yYAGsfJjzsGEYgJgIdLSkOdfOfsfERfOq0j5cjGKDcBTQydYRTtpapO8X4l3ozPMxaOL4aut_t2WMHYw4Y2k8igB62k9FO5qoTz8FO5zRniqJUjPSgLUzBPa4NJWGOGlhHfInIR_jpQSiUoJ893VHMOy275MSC9kLIk1GTqnqjB3J1zvav7U25yvlHXmipxPjd3BfY0LpONLJGLpBVANs5sLBx_TW19GHKegkpYe8AAnwdaGxM5CopjhG"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-</div>
-<!-- Floating Tech Badge -->
-<div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl border border-slate-300 shadow-2xl">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
-</div>
-<div>
-<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Latency</p>
-<p class="text-2xl font-black text-on-surface">0.02ms</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Why Choose Us Section -->
-<section class="py-32 px-8 bg-surface-container-lowest relative">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
-<div class="space-y-4">
-<p class="text-primary-container font-black tracking-[0.2em] uppercase text-sm">Capabilities</p>
-<h2 class="text-4xl md:text-5xl font-['Inter'] font-bold text-on-surface">Precision Built <br/> For Scale</h2>
-</div>
-<p class="text-on-surface-variant max-w-md text-lg italic">"We don't just solve problems; we engineer the foundations of the next digital era."</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Code Card -->
-<div class="group p-8 rounded-3xl glass-panel border border-slate-200 hover:border-primary-container/30 transition-all duration-500 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl">code</span>
-</div>
-<div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-<span class="material-symbols-outlined text-blue-600 text-3xl" style="font-variation-settings: 'FILL' 1;">code</span>
-</div>
-<h3 class="text-2xl font-bold mb-4 text-on-surface">Code.</h3>
-<p class="text-on-surface-variant leading-relaxed">Precision-built systems that look stunning and perform flawlessly, forming the rock-solid foundation of your digital presence.</p>
-<div class="mt-8 pt-8 border-t border-slate-200">
-<a class="text-blue-600 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group/link" href="services.html">
-                                Website Engineering 
-                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Manage Card -->
-<div class="group p-8 rounded-3xl glass-panel border border-slate-200 hover:border-primary-container/30 transition-all duration-500 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl">settings</span>
-</div>
-<div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-<span class="material-symbols-outlined text-blue-600 text-3xl" style="font-variation-settings: 'FILL' 1;">settings</span>
-</div>
-<h3 class="text-2xl font-bold mb-4 text-on-surface">Manage.</h3>
-<p class="text-on-surface-variant leading-relaxed">Continuous technical uptime, security, and lightning-fast optimizations to make sure your investments never sleep.</p>
-<div class="mt-8 pt-8 border-t border-slate-200">
-<a class="text-blue-600 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group/link" href="services.html">
-                                Site Management
-                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Grow Card -->
-<div class="group p-8 rounded-3xl glass-panel border border-slate-200 hover:border-primary-container/30 transition-all duration-500 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-8xl">trending_up</span>
-</div>
-<div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-<span class="material-symbols-outlined text-blue-600 text-3xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
-</div>
-<h3 class="text-2xl font-bold mb-4 text-on-surface">Grow.</h3>
-<p class="text-on-surface-variant leading-relaxed">Scaling your impact through high-fidelity content creation and data-driven Social Media/Google Ads.</p>
-<div class="mt-8 pt-8 border-t border-slate-200">
-<a class="text-blue-600 font-bold text-sm uppercase tracking-widest flex items-center gap-2 group/link" href="services.html">
-                                Marketing & Ads
-                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-<section class="py-24 px-8">
-<div class="max-w-7xl mx-auto">
-<div class="relative rounded-[3rem] overflow-hidden bg-surface-container-high p-12 md:p-24 border border-slate-200">
-<div class="absolute top-0 right-0 w-1/2 h-full">
-<img alt="Cyber security concept" class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="high-tech cyber security server room with glowing blue led lights and futuristic hardware racks in dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_yt16V7DrEcgRuwBsPZacQDjWJo6o8HFdXRDL_kOQpGRYTne4wksDapArqW3DM2Hy5eeNyKluVM5hYMwom3gYUDrszVBwf1ahwiHNfTlTnqsiHdsdFvXg4yRg4v7RR1Az4Vk5uBbJcdF72J5AQyFFMBfJyyosSqT0kbjc-_uicy79J96NKvOQ5-ZZLClaOJ36HN76KxGymInzVJQRH-8wlGSWe_rMvG3BqRK1JGvpfIk-szBhOHsh2bFF0shaPDLT3HzibCIjdRxf"/>
-</div>
-<div class="relative z-10 max-w-2xl space-y-8">
-<h2 class="text-4xl md:text-6xl font-bold text-on-surface leading-tight">Ready to transcend the <span class="text-blue-600">standard?</span></h2>
-<p class="text-xl text-on-surface-variant">Connect with our engineering team to prototype your next disruption. Our systems are ready for deployment.</p>
-<div class="flex gap-4">
-<a href="contact.html" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-2xl font-bold hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] transition-all inline-block text-center flex-col justify-center">Start Project</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full rounded-t-[2rem] mt-20 bg-slate-50 border-t border-slate-200">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 max-w-7xl mx-auto gap-8">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-6 w-auto object-contain">
-<span class="text-blue-600 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
-</a>
-<p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
-    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
-</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="index.html">Home</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="services.html">Services</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="about.html">About</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="contact.html">Contact</a>
-</div>
-<div class="flex flex-col items-center md:items-end gap-4">
-<div class="flex gap-6">
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">public</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">share</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">terminal</span>
-</a>
-</div>
-<span class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium opacity-60">© 2025 Novus Devv. All rights reserved.</span>
-</div>
-</div>
-</footer>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#ffffff]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
-        <button id="close-menu" class="absolute top-6 right-8 text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <div class="flex flex-col items-center gap-10 w-full">
-            <a href="index.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Home</a>
-            <a href="services.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Services</a>
-            <a href="about.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">About</a>
-            <a href="contact.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Contact</a>
-            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-blue-600 to-blue-700 text-white font-black rounded-full text-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] tracking-widest uppercase">Start Project</a>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="site-container">
+      <div class="header-wrapper">
+        <a href="index.html" class="brand-logo">
+          <img src="logo.png" alt="Novus Devv Logo">
+          <span class="brand-name">NOVUS<span>DEVV</span></span>
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="nav-cta btn-cyan">Get Started</a>
+          <button class="hamburger-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
         </div>
+      </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuTrigger = document.getElementById('mobile-menu-trigger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeBtn = document.getElementById('close-menu');
-            
-            if (menuTrigger && mobileMenu && closeBtn) {
-                menuTrigger.addEventListener('click', () => {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    // Force reflow
-                    mobileMenu.offsetHeight;
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                });
-                
-                const closeMenu = () => {
-                    mobileMenu.classList.remove('opacity-100');
-                    mobileMenu.classList.add('opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('flex');
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                };
+  </header>
 
-                closeBtn.addEventListener('click', closeMenu);
-                
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-overlay">
+    <button id="close-menu" class="mobile-close-btn" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl text-[#2d4436]">close</span>
+    </button>
+    <div class="mb-4">
+      <img src="logo.png" alt="Novus Devv Logo" class="h-16 w-auto drop-shadow-[0_2px_10px_rgba(45,68,54,0.2)]">
+    </div>
+    <a href="index.html" class="text-[#2d4436] font-bold">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-cyan mt-4">Start Project</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+      <div class="ambient-blob ambient-blob-cyan"></div>
+      <div class="ambient-blob ambient-blob-purple"></div>
+
+      <div class="site-container">
+        <div class="hero-grid">
+          <div class="space-y-6 sm:space-y-8">
+            <div class="badge-pill">
+              <span class="badge-dot"></span>
+              <span>Engineering & Media Studio</span>
+            </div>
+
+            <h1 class="hero-title">
+              Craft. <br/>
+              <span class="text-gradient-multi">Edit. Scale.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              A calm, high-precision technical and creative partner. We engineer elegant websites, shoot commercial video & photo content, and run targeted campaigns designed for sustainable growth.
+            </p>
+
+            <div class="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
+              <a href="services.html" class="btn-cyan w-full sm:w-auto">
+                <span>Explore Services</span>
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+              <a href="contact.html" class="btn-outline-glass w-full sm:w-auto">
+                <span>Book Consultation</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Floating Stats Card -->
+          <div class="relative group w-full">
+            <div class="absolute -inset-1 bg-gradient-to-r from-[#84a98c]/25 to-[#588157]/25 rounded-3xl blur-2xl opacity-45 group-hover:opacity-75 transition duration-700"></div>
+            <div class="hero-visual-card glow-border">
+              <img alt="Novus Devv Creative Visualization" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6_ZcOz9CLmB8Ag83jL-7yYAGsfJjzsGEYgJgIdLSkOdfOfsfERfOq0j5cjGKDcBTQydYRTtpapO8X4l3ozPMxaOL4aut_t2WMHYw4Y2k8igB62k9FO5qoTz8FO5zRniqJUjPSgLUzBPa4NJWGOGlhHfInIR_jpQSiUoJ893VHMOy275MSC9kLIk1GTqnqjB3J1zvav7U25yvlHXmipxPjd3BfY0LpONLJGLpBVANs5sLBx_TW19GHKegkpYe8AAnwdaGxM5CopjhG"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#f4f7f4]/60 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Floating Pill -->
+            <div class="floating-stats-pill">
+              <div class="flex items-center gap-3 sm:gap-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436] shrink-0">
+                  <span class="material-symbols-outlined text-xl sm:text-2xl">auto_awesome</span>
+                </div>
+                <div>
+                  <p class="text-[10px] font-mono uppercase tracking-widest text-[#4a5d50] font-semibold">Precision & Artistry</p>
+                  <p class="text-base sm:text-lg font-bold text-[#1a2920]">Full-Spectrum Growth</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Bento Grid Section -->
+    <section class="py-16 sm:py-24 relative">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 sm:mb-16">
+          <div>
+            <span class="badge-pill mb-3">Core Pillars</span>
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold font-['Outfit'] tracking-tight">Capabilities Designed to Scale</h2>
+          </div>
+          <p class="text-[#4a5d50] max-w-md text-sm leading-relaxed">
+            From clean custom code architecture to multi-camera video shoots and data-driven ad management.
+          </p>
+        </div>
+
+        <div class="bento-container">
+          <!-- Pillar 1: Website Engineering -->
+          <div class="glass-card bento-card-inner group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-[#2d4436] font-bold">01 // CODE</span>
+                <div class="icon-box-cyan mb-0">
+                  <span class="material-symbols-outlined">code</span>
+                </div>
+              </div>
+              <h3 class="bento-card-title">Website Build & Engineering</h3>
+              <p class="bento-card-desc">
+                Custom responsive websites, web applications, refined UI/UX design, and optimized page speeds engineered for seamless mobile and desktop performance.
+              </p>
+              <div class="tag-list">
+                <span class="tag-item">React / Vite</span>
+                <span class="tag-item">Tailwind CSS</span>
+                <span class="tag-item">Web Apps</span>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200">
+              <a href="services.html" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#2d4436] hover:text-[#588157]">
+                Explore Engineering <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Website Management -->
+          <div class="glass-card bento-card-inner group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-[#2d4436] font-bold">02 // CARE</span>
+                <div class="icon-box-cyan mb-0">
+                  <span class="material-symbols-outlined">shield</span>
+                </div>
+              </div>
+              <h3 class="bento-card-title">Website Management & Care</h3>
+              <p class="bento-card-desc">
+                Ongoing technical infrastructure care, 24/7 uptime monitoring, cloud backups, security patching, and fast-turnaround content updates.
+              </p>
+              <div class="tag-list">
+                <span class="tag-item">24/7 Uptime</span>
+                <span class="tag-item">Cloud Backups</span>
+                <span class="tag-item">Security</span>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200">
+              <a href="services.html" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#2d4436] hover:text-[#588157]">
+                Explore Management <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Media & Content Production -->
+          <div class="glass-card bento-card-inner group border-[#588157]/30">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-[#436b53] font-bold">03 // MEDIA</span>
+                <div class="icon-box-purple mb-0">
+                  <span class="material-symbols-outlined">videocam</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge-pill badge-pill-purple text-[9px] py-0.5 px-2">EXPANDED SUITE</span>
+              </div>
+              <h3 class="bento-card-title text-[#1a2920]">Media & Content Production</h3>
+              <p class="bento-card-desc">
+                Commercial photo & video shoots, professional short-form Instagram Reels, cinematic video editing, color grading, motion graphics, and graphic kits.
+              </p>
+              <div class="tag-list">
+                <span class="tag-item">4K Video Shoots</span>
+                <span class="tag-item">Reels & Edits</span>
+                <span class="tag-item">Graphic Design</span>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200">
+              <a href="services.html" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#436b53] hover:text-[#2d4436]">
+                Explore Media <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Social Media & Ads Marketing -->
+          <div class="glass-card bento-card-inner group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-[#2d4436] font-bold">04 // GROWTH</span>
+                <div class="icon-box-cyan mb-0">
+                  <span class="material-symbols-outlined">trending_up</span>
+                </div>
+              </div>
+              <h3 class="bento-card-title">Social Media & Ads Marketing</h3>
+              <p class="bento-card-desc">
+                Data-backed Google Ads and Meta/Instagram ad campaigns, precise audience targeting, growth strategy, and transparent conversion analytics.
+              </p>
+              <div class="tag-list">
+                <span class="tag-item">Google Ads</span>
+                <span class="tag-item">Meta / IG Ads</span>
+                <span class="tag-item">ROAS Analytics</span>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200">
+              <a href="services.html" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#2d4436] hover:text-[#588157]">
+                Explore Marketing <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Production Feature Highlight -->
+    <section class="py-16 sm:py-20 relative bg-gradient-to-b from-transparent via-[#84a98c]/15 to-transparent">
+      <div class="site-container">
+        <div class="glass-card p-6 sm:p-10 md:p-14 glow-border">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div class="space-y-6">
+              <div class="badge-pill badge-pill-purple">
+                <span class="material-symbols-outlined text-sm">movie_filter</span>
+                <span>Creative Media Production</span>
+              </div>
+              <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold font-['Outfit'] leading-tight">
+                Cinematic Visuals. <br/>
+                <span class="text-gradient-purple">High-Impact Storytelling.</span>
+              </h2>
+              <p class="text-[#4a5d50] leading-relaxed text-sm sm:text-base">
+                Elevate your digital presence through compelling storytelling. We combine commercial video shoots, 4K camera work, professional video editing (DaVinci Resolve / Premiere Pro), color grading, dynamic Instagram Reels, and custom graphic design.
+              </p>
+              <ul class="space-y-3 font-mono text-xs text-[#2d4436] font-semibold">
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[#436b53] text-sm">check_circle</span>
+                  Commercial & Product Photography
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[#436b53] text-sm">check_circle</span>
+                  Short-Form Instagram Reels & Video Editing
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[#436b53] text-sm">check_circle</span>
+                  Motion Graphics & Custom Graphic Kits
+                </li>
+              </ul>
+              <div class="pt-2 sm:pt-4">
+                <a href="contact.html" class="btn-cyan w-full sm:w-auto">
+                  Book A Production Shoot
+                </a>
+              </div>
+            </div>
+
+            <!-- Creative Media Capability Showcase Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="glass-card p-5 space-y-3 border-[#588157]/20 bg-white/90">
+                <div class="w-10 h-10 rounded-xl bg-[#588157]/10 border border-[#588157]/20 flex items-center justify-center text-[#2d4436]">
+                  <span class="material-symbols-outlined text-xl">photo_camera</span>
+                </div>
+                <h4 class="font-['Outfit'] font-bold text-sm text-[#1a2920]">4K Commercial Shoots</h4>
+                <p class="text-xs text-[#4a5d50] leading-relaxed">High-resolution camera work, studio lighting, & product photography.</p>
+              </div>
+
+              <div class="glass-card p-5 space-y-3 border-[#588157]/20 bg-white/90">
+                <div class="w-10 h-10 rounded-xl bg-[#588157]/10 border border-[#588157]/20 flex items-center justify-center text-[#2d4436]">
+                  <span class="material-symbols-outlined text-xl">movie_edit</span>
+                </div>
+                <h4 class="font-['Outfit'] font-bold text-sm text-[#1a2920]">Reels & Post-Production</h4>
+                <p class="text-xs text-[#4a5d50] leading-relaxed">DaVinci Resolve & Premiere Pro editing, color grading, & sound design.</p>
+              </div>
+
+              <div class="glass-card p-5 space-y-3 border-[#588157]/20 bg-white/90">
+                <div class="w-10 h-10 rounded-xl bg-[#588157]/10 border border-[#588157]/20 flex items-center justify-center text-[#2d4436]">
+                  <span class="material-symbols-outlined text-xl">design_services</span>
+                </div>
+                <h4 class="font-['Outfit'] font-bold text-sm text-[#1a2920]">Graphic & Motion Design</h4>
+                <p class="text-xs text-[#4a5d50] leading-relaxed">Custom ad banners, social media graphic kits, & motion overlays.</p>
+              </div>
+
+              <div class="glass-card p-5 space-y-3 border-[#588157]/20 bg-white/90">
+                <div class="w-10 h-10 rounded-xl bg-[#588157]/10 border border-[#588157]/20 flex items-center justify-center text-[#2d4436]">
+                  <span class="material-symbols-outlined text-xl">campaign</span>
+                </div>
+                <h4 class="font-['Outfit'] font-bold text-sm text-[#1a2920]">Creative Ad Strategy</h4>
+                <p class="text-xs text-[#4a5d50] leading-relaxed">Visual storytelling engineered to drive conversions on Instagram & Google.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Execution Workflow Section -->
+    <section class="py-16 sm:py-24 relative">
+      <div class="site-container">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-4">
+          <span class="badge-pill">Workflow</span>
+          <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold font-['Outfit']">How We Partner With You</h2>
+          <p class="text-[#4a5d50] text-sm">A calm, methodical end-to-end process linking strategy, creative shoots, engineering, and performance growth.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card p-6 sm:p-8 relative">
+            <span class="font-mono text-2xl font-bold text-[#2d4436]/40 mb-3 block">01</span>
+            <h3 class="font-['Outfit'] font-bold text-lg mb-2">Discovery</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">Understanding your business goals, target audience, technical needs, and media requirements.</p>
+          </div>
+
+          <div class="glass-card p-6 sm:p-8 relative">
+            <span class="font-mono text-2xl font-bold text-[#436b53]/40 mb-3 block">02</span>
+            <h3 class="font-['Outfit'] font-bold text-lg mb-2">Media & Design</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">Executing commercial photography, video shoots, UI wireframing, and creative graphic design.</p>
+          </div>
+
+          <div class="glass-card p-6 sm:p-8 relative">
+            <span class="font-mono text-2xl font-bold text-[#2d4436]/40 mb-3 block">03</span>
+            <h3 class="font-['Outfit'] font-bold text-lg mb-2">Engineering & Edit</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">Building responsive web pages, editing video content, and performing thorough QA testing.</p>
+          </div>
+
+          <div class="glass-card p-6 sm:p-8 relative">
+            <span class="font-mono text-2xl font-bold text-[#588157]/40 mb-3 block">04</span>
+            <h3 class="font-['Outfit'] font-bold text-lg mb-2">Scale & Care</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">Launching ad campaigns, monitoring 24/7 site health, and delivering ongoing updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-16 sm:py-20 relative">
+      <div class="site-container">
+        <div class="glass-card p-8 sm:p-12 md:p-16 text-center glow-border relative overflow-hidden">
+          <div class="ambient-blob ambient-blob-cyan" style="top: -50%; left: 30%;"></div>
+          <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold font-['Outfit']">Ready To Elevate Your Brand?</h2>
+            <p class="text-[#4a5d50] text-sm sm:text-base">Connect with our founders and engineering leads to discuss your project requirements today.</p>
+            <div class="pt-2 sm:pt-4">
+              <a href="contact.html" class="btn-cyan w-full sm:w-auto">Start Your Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="site-container">
+      <div class="footer-top">
+        <div class="space-y-4 max-w-sm">
+          <a href="index.html" class="brand-logo">
+            <img src="logo.png" alt="Novus Devv Logo">
+            <span class="brand-name">NOVUS<span>DEVV</span></span>
+          </a>
+          <p class="text-[#4a5d50] text-xs leading-relaxed">
+            Novus Devv (Novus Innovates) — Technical website engineering, 24/7 site management, commercial media production, and high-ROI ads marketing.
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025-2026 Novus Devv / Novus Innovates. All rights reserved.</span>
+        <span>Founders: Rithvik S, Shivaan Gowda D, Jaya Shanker</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Overlay -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuTrigger = document.getElementById('mobile-menu-trigger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('close-menu');
+
+      if (menuTrigger && mobileMenu && closeBtn) {
+        menuTrigger.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
         });
-    </script>
 
-</body></html>
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

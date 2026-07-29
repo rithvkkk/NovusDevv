@@ -1,364 +1,289 @@
 <!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>About Us | Novus Devv - Our Founders & Studio Vision</title>
+  <meta name="description" content="Learn about Novus Devv (Novus Innovates), founded by Rithvik S, Shivaan Gowda D, and Jaya Shanker. Bridging web engineering, media production, and growth marketing."/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "inverse-on-surface": "#2c303b",
-            "on-error": "#690005",
-            "primary-fixed": "#9cf0ff",
-            "secondary": "#c3c6d4",
-            "on-surface-variant": "#475569",
-            "primary": "#c3f5ff",
-            "on-secondary-fixed": "#f8fafc",
-            "on-primary": "#ffffff",
-            "background": "#ffffff",
-            "on-primary-fixed-variant": "#004f58",
-            "inverse-surface": "#0f172a",
-            "surface-container": "#1c1f2a",
-            "secondary-fixed-dim": "#c3c6d4",
-            "primary-container": "#2563eb",
-            "on-secondary-fixed-variant": "#434652",
-            "surface-tint": "#1d4ed8",
-            "tertiary-fixed-dim": "#c6c6c7",
-            "surface-container-lowest": "#f8fafc",
-            "on-tertiary-container": "#575959",
-            "tertiary": "#ececec",
-            "on-secondary-container": "#b5b8c6",
-            "on-error-container": "#ffdad6",
-            "secondary-fixed": "#0f172a",
-            "surface-container-low": "#f8fafc",
-            "tertiary-container": "#d0d0d0",
-            "on-secondary": "#2c303b",
-            "inverse-primary": "#006875",
-            "outline-variant": "#3b494c",
-            "on-background": "#0f172a",
-            "surface-variant": "#f1f5f9",
-            "error-container": "#93000a",
-            "surface-container-high": "#e2e8f0",
-            "primary-fixed-dim": "#1d4ed8",
-            "outline": "#849396",
-            "surface": "#ffffff",
-            "surface-dim": "#ffffff",
-            "on-primary-fixed": "#001f24",
-            "on-surface": "#0f172a",
-            "on-tertiary-fixed-variant": "#454747",
-            "tertiary-fixed": "#e2e2e2",
-            "surface-container-highest": "#f1f5f9",
-            "on-tertiary-fixed": "#1a1c1c",
-            "surface-bright": "#353944",
-            "error": "#ffb4ab",
-            "on-tertiary": "#2f3131",
-            "secondary-container": "#454955",
-            "on-primary-container": "#ffffff"
-          },
-          fontFamily: {
-            "headline": ["Inter"],
-            "body": ["Inter"],
-            "label": ["Inter"]
-          },
-          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
-        },
-      },
-    }
-  </script>
-<style>
-    body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-    .glass-panel { backdrop-filter: blur(16px); background-color: rgba(49, 53, 64, 0.6); }
-    .no-line-rule { border: none !important; }
-    .tonal-shift { background: linear-gradient(180deg, #171b26 0%, #0f131d 100%); }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="text-on-background selection:bg-primary-container/30">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,229,255,0.08)]">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-8 w-auto object-contain">
-<span class="text-blue-600 font-black tracking-tighter text-2xl uppercase font-['Inter']">Novus Devv</span>
-</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="index.html">Home</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">Services</a>
-<a class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 uppercase tracking-[0.1em] text-[0.6875rem]" href="about.html">About</a>
-<a class="text-slate-600 font-medium hover:text-blue-400 transition-colors uppercase tracking-[0.1em] text-[0.6875rem]" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a href="contact.html" class="hidden md:block px-6 py-2.5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary-container font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 uppercase tracking-widest text-[0.6875rem] inline-block text-center flex-col justify-center">Get Started</a>
-<button class="md:hidden text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-trigger">
-<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-</header>
-<main class="pt-32 pb-20">
-<!-- Hero Section -->
-<section class="px-8 max-w-7xl mx-auto mb-32">
-<div class="max-w-4xl">
-<div class="inline-flex items-center gap-2 mb-6">
-<span class="w-12 h-[1px] bg-primary-container"></span>
-<span class="text-[0.6875rem] uppercase tracking-[0.2em] text-primary-container font-bold">EST. 2025</span>
-</div>
-<h1 class="text-5xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
-          Code. <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary-fixed-dim">Manage. Grow.</span>
-</h1>
-<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-2xl">
-          Novus Devv is a forward-thinking web development agency founded by Rithvik S and Shivaan Gowda S. We specialize in bridging the gap between complex technology and business growth.
-        </p>
-</div>
-</section>
-<!-- Mission/Vision Section (Bento Style) -->
-<section class="px-8 max-w-7xl mx-auto mb-40">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Mission Statement -->
-<div class="md:col-span-7 flex flex-col justify-center pr-0 md:pr-12 mb-12 md:mb-0">
-<label class="text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold mb-4 block">Our Philosophy</label>
-<h2 class="text-4xl md:text-5xl font-bold text-on-background tracking-tight leading-tight mb-8">
-            <span class="text-primary-container">To empower businesses with digital assets that are not only visually stunning</span> but also technically robust and marketing-ready.
-</h2>
-<div class="h-1 w-24 bg-primary-container/20 rounded-full"></div>
-</div>
-<!-- Vision Card (Glassmorphic) -->
-<div class="md:col-span-5 relative group">
-<div class="absolute -inset-0.5 bg-gradient-to-br from-primary-container/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-<div class="relative glass-panel p-10 rounded-3xl h-full flex flex-col justify-between border border-outline-variant/10">
-<div class="flex justify-between items-start mb-12">
-<div class="p-4 bg-surface-container-high rounded-2xl">
-<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="psychology">psychology</span>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant/30 text-6xl" data-icon="visibility">visibility</span>
-</div>
-<div>
-<h3 class="text-2xl font-bold text-on-background mb-4">Who We Are</h3>
-<p class="text-on-surface-variant leading-relaxed">
-                Whether you are a startup looking for your first website or an established brand needing a technical partner to manage your digital presence, we provide the tools and expertise to help you succeed.
-              </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Team Section -->
-<section class="px-8 max-w-7xl mx-auto mb-40">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-<div>
-<label class="text-[0.6875rem] uppercase tracking-[0.1em] text-on-surface-variant font-bold mb-4 block">The Collective</label>
-<h2 class="text-4xl md:text-5xl font-bold text-on-background tracking-tighter">Meet the Innovators</h2>
-</div>
-<p class="text-on-surface-variant max-w-md md:text-right">
-          A synchronized team of architects, dreamers, and engineers focused on singular digital mastery.
-        </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-<!-- Team Member 1 -->
-<div class="bg-surface-container-low p-8 rounded-3xl group hover:bg-surface-container-high transition-all duration-300">
-<div class="mb-6 overflow-hidden rounded-2xl aspect-square relative">
-<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-primary-container/50" data-icon="person">person</span>
-</div>
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f4f7f4] text-[#1a2920] selection:bg-[#588157]/20 selection:text-[#2d4436]">
 
-</div>
-<h4 class="text-xl font-bold text-on-background mb-1">Rithvik S</h4>
-<p class="text-primary-container text-sm font-medium tracking-wide mb-6 uppercase">Founder & Tech Lead</p>
-<div class="flex gap-4">
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="share">share</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
-</a>
-</div>
-</div>
-<!-- Team Member 2 -->
-<div class="bg-surface-container-low p-8 rounded-3xl group hover:bg-surface-container-high transition-all duration-300">
-<div class="mb-6 overflow-hidden rounded-2xl aspect-square relative">
-<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-primary-container/50" data-icon="person">person</span>
-</div>
-
-</div>
-<h4 class="text-xl font-bold text-on-background mb-1">Shivaan Gowda S</h4>
-<p class="text-primary-container text-sm font-medium tracking-wide mb-6 uppercase">Founder & Business Growth</p>
-<div class="flex gap-4">
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="share">share</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
-</a>
-</div>
-</div>
-<!-- Team Member 3 -->
-<div class="bg-surface-container-low p-8 rounded-3xl group hover:bg-surface-container-high transition-all duration-300">
-<div class="mb-6 overflow-hidden rounded-2xl aspect-square relative">
-<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-primary-container/50" data-icon="person">person</span>
-</div>
-</div>
-<h4 class="text-xl font-bold text-on-background mb-1">Jaya Shanker</h4>
-<p class="text-primary-container text-sm font-medium tracking-wide mb-6 uppercase">Design and Market</p>
-<div class="flex gap-4">
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="share">share</span>
-</a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full rounded-t-[2rem] mt-20 bg-slate-50 border-t border-slate-200">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 max-w-7xl mx-auto gap-8">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-<img src="logo.png" alt="Novus Devv" class="h-6 w-auto object-contain">
-<span class="text-blue-600 font-bold uppercase tracking-tighter text-xl">Novus Devv</span>
-</a>
-<p class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium max-w-xs text-center md:text-left">
-    Pioneering autonomous systems and neural-driven technology infrastructures for a connected world.
-</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="index.html">Home</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="services.html">Services</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="about.html">About</a>
-<a class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium hover:text-blue-500 transition-colors" href="contact.html">Contact</a>
-</div>
-<div class="flex flex-col items-center md:items-end gap-4">
-<div class="flex gap-6">
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">public</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">share</span>
-</a>
-<a class="text-slate-500 hover:text-blue-600 transition-colors" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined">terminal</span>
-</a>
-</div>
-<span class="text-slate-500 font-['Inter'] text-[11px] uppercase tracking-[0.1em] font-medium opacity-60">© 2025 Novus Devv. All rights reserved.</span>
-</div>
-</div>
-</footer>
-<!-- Navigation Drawer (Mobile Backdrop - Hidden by default) -->
-<div class="hidden fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm">
-<div class="h-full w-64 flex flex-col p-6 bg-[#ffffff] rounded-r-3xl transition-transform duration-300 ease-in-out">
-<div class="flex items-center gap-3 mb-12">
-<span class="text-xl font-bold text-[#dfe2f1]">Novus Devv</span>
-</div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-[#00e5ff]" data-icon="home">home</span>
-          Home
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="site-container">
+      <div class="header-wrapper">
+        <a href="index.html" class="brand-logo">
+          <img src="logo.png" alt="Novus Devv Logo">
+          <span class="brand-name">NOVUS<span>DEVV</span></span>
         </a>
-<a class="flex items-center gap-4 p-4 text-[#00e5ff] bg-[#262a35] rounded-xl font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem]" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-[#00e5ff]" data-icon="info">info</span>
-          About
-        </a>
-<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-[#00e5ff]" data-icon="layers">layers</span>
-          Services
-        </a>
-<a class="flex items-center gap-4 p-4 text-[#bac9cc] font-['Inter'] uppercase tracking-[0.1em] text-[0.6875rem] hover:bg-[#262a35] transition-all rounded-xl" href="services.html">
-                                
-
-                                <span class="material-symbols-outlined text-[#00e5ff]" data-icon="mail">mail</span>
-          Contact
-        </a>
-</nav>
-</div>
-</div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#ffffff]/98 backdrop-blur-3xl z-[100] hidden flex-col items-center justify-center pt-24 pb-8 px-8 opacity-0 transition-opacity duration-300">
-        <button id="close-menu" class="absolute top-6 right-8 text-blue-600 p-2 hover:bg-slate-100 rounded-xl transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <div class="flex flex-col items-center gap-10 w-full">
-            <a href="index.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Home</a>
-            <a href="services.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Services</a>
-            <a href="about.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">About</a>
-            <a href="contact.html" class="text-4xl font-black text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-colors">Contact</a>
-            <a href="contact.html" class="mt-8 px-10 py-5 bg-gradient-to-br from-blue-600 to-blue-700 text-white font-black rounded-full text-xl shadow-[0_0_30px_rgba(37,99,235,0.3)] tracking-widest uppercase">Start Project</a>
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link active" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="nav-cta btn-cyan">Get Started</a>
+          <button class="hamburger-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
         </div>
+      </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuTrigger = document.getElementById('mobile-menu-trigger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeBtn = document.getElementById('close-menu');
-            
-            if (menuTrigger && mobileMenu && closeBtn) {
-                menuTrigger.addEventListener('click', () => {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    // Force reflow
-                    mobileMenu.offsetHeight;
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                });
-                
-                const closeMenu = () => {
-                    mobileMenu.classList.remove('opacity-100');
-                    mobileMenu.classList.add('opacity-0');
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('flex');
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                };
+  </header>
 
-                closeBtn.addEventListener('click', closeMenu);
-                
-                // Close on link click
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-overlay">
+    <button id="close-menu" class="mobile-close-btn" aria-label="Close Menu">
+      <span class="material-symbols-outlined text-3xl text-[#2d4436]">close</span>
+    </button>
+    <div class="mb-4">
+      <img src="logo.png" alt="Novus Devv Logo" class="h-16 w-auto drop-shadow-[0_2px_10px_rgba(45,68,54,0.2)]">
+    </div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html" class="text-[#2d4436] font-bold">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-cyan mt-4">Start Project</a>
+  </div>
+
+  <main class="pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <!-- Hero Section -->
+    <section class="mb-16 sm:mb-20 relative">
+      <div class="ambient-blob ambient-blob-cyan"></div>
+      <div class="ambient-blob ambient-blob-purple"></div>
+
+      <div class="site-container">
+        <div class="max-w-3xl space-y-6">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span>Studio Philosophy</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold font-['Outfit'] leading-tight">
+            Bridging Technology, <br/>
+            <span class="text-gradient-multi">Creative Media & Growth.</span>
+          </h1>
+          <p class="text-[#4a5d50] text-base sm:text-lg leading-relaxed">
+            Novus Devv (Novus Innovates) was established to solve a fundamental challenge: bridging high-level web engineering with cinematic media production and data-backed performance marketing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Bento Grid -->
+    <section class="py-8 sm:py-12 relative">
+      <div class="site-container">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
+          <span class="badge-pill">Foundational Principles</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-['Outfit']">Our Pillars of Craftsmanship</h2>
+        </div>
+
+        <div class="bento-container">
+          <div class="glass-card p-6 sm:p-8 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436]">
+              <span class="material-symbols-outlined text-2xl">terminal</span>
+            </div>
+            <h3 class="font-['Outfit'] font-bold text-lg sm:text-xl">Engineering Rigor</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">
+              We build clean, maintainable, and high-speed web infrastructure. Code quality and Core Web Vitals performance are never compromised.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-purple p-6 sm:p-8 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-[#436b53]/10 border border-[#436b53]/20 flex items-center justify-center text-[#436b53]">
+              <span class="material-symbols-outlined text-2xl">movie</span>
+            </div>
+            <h3 class="font-['Outfit'] font-bold text-lg sm:text-xl text-[#1a2920]">Visual Artistry</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">
+              High-resolution 4K video shoots, commercial photography, and engaging short-form reels editing make your product stand out immediately.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 sm:p-8 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436]">
+              <span class="material-symbols-outlined text-2xl">shield</span>
+            </div>
+            <h3 class="font-['Outfit'] font-bold text-lg sm:text-xl">24/7 Security & Care</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">
+              Continuous monitoring, daily cloud backups, and proactive updates guarantee zero downtime and complete peace of mind.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 sm:p-8 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-[#2d4436]/10 border border-[#2d4436]/20 flex items-center justify-center text-[#2d4436]">
+              <span class="material-symbols-outlined text-2xl">trending_up</span>
+            </div>
+            <h3 class="font-['Outfit'] font-bold text-lg sm:text-xl">Targeted Growth</h3>
+            <p class="text-[#4a5d50] text-sm leading-relaxed">
+              We leverage data-driven Google Ads and Meta campaigns to deliver measurable return on investment and real customer acquisition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team / Founders Section -->
+    <section class="py-16 sm:py-20 relative">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 sm:mb-16">
+          <div>
+            <span class="badge-pill mb-3">Leadership</span>
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold font-['Outfit']">Meet The Founders</h2>
+          </div>
+          <p class="text-[#4a5d50] max-w-md text-sm leading-relaxed">
+            The visionary team driving engineering precision, creative direction, and business growth at Novus Devv.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Founder 1: Rithvik S -->
+          <div class="glass-card p-6 sm:p-8 text-center space-y-6 glow-border group">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#2d4436]/10 border border-[#2d4436]/20 mx-auto flex items-center justify-center text-[#2d4436] group-hover:scale-105 transition-transform duration-500">
+              <span class="material-symbols-outlined text-4xl sm:text-5xl">code</span>
+            </div>
+            <div>
+              <h3 class="font-['Outfit'] font-bold text-xl sm:text-2xl mb-1">Rithvik S</h3>
+              <p class="font-mono text-xs font-bold text-[#2d4436] uppercase tracking-widest">Founder & Tech Lead</p>
+            </div>
+            <p class="text-[#4a5d50] text-xs leading-relaxed">
+              Leads website engineering architecture, custom software development, speed optimization, and ongoing technical site management infrastructure.
+            </p>
+            <div class="pt-2">
+              <a href="https://www.linkedin.com/in/rithvik-s-38b56b35b" target="_blank" class="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#2d4436] hover:text-[#588157]">
+                <span class="material-symbols-outlined text-sm">link</span>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+
+          <!-- Founder 2: Shivaan Gowda D -->
+          <div class="glass-card p-6 sm:p-8 text-center space-y-6 glow-border group">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#436b53]/10 border border-[#436b53]/20 mx-auto flex items-center justify-center text-[#436b53] group-hover:scale-105 transition-transform duration-500">
+              <span class="material-symbols-outlined text-4xl sm:text-5xl">chart_data</span>
+            </div>
+            <div>
+              <h3 class="font-['Outfit'] font-bold text-xl sm:text-2xl mb-1">Shivaan Gowda D</h3>
+              <p class="font-mono text-xs font-bold text-[#436b53] uppercase tracking-widest">Founder & Business Growth</p>
+            </div>
+            <p class="text-[#4a5d50] text-xs leading-relaxed">
+              Drives strategic business growth, client relations, Google & Meta advertising strategies, and performance acquisition roadmaps.
+            </p>
+            <div class="pt-2">
+              <a href="contact.html" class="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#436b53] hover:text-[#2d4436]">
+                <span class="material-symbols-outlined text-sm">mail</span>
+                Contact Growth Team
+              </a>
+            </div>
+          </div>
+
+          <!-- Founder 3: Jaya Shanker -->
+          <div class="glass-card glass-card-purple p-6 sm:p-8 text-center space-y-6 glow-border group border-[#588157]/30">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#436b53]/10 border border-[#436b53]/20 mx-auto flex items-center justify-center text-[#436b53] group-hover:scale-105 transition-transform duration-500">
+              <span class="material-symbols-outlined text-4xl sm:text-5xl">palette</span>
+            </div>
+            <div>
+              <h3 class="font-['Outfit'] font-bold text-xl sm:text-2xl mb-1 text-[#1a2920]">Jaya Shanker</h3>
+              <p class="font-mono text-xs font-bold text-[#436b53] uppercase tracking-widest">Design & Marketing</p>
+            </div>
+            <p class="text-[#4a5d50] text-xs leading-relaxed">
+              Oversees visual brand identity, UI/UX aesthetics, commercial video & photography shoots, reels editing, and creative graphic direction.
+            </p>
+            <div class="pt-2">
+              <a href="services.html" class="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#436b53] hover:text-[#2d4436]">
+                <span class="material-symbols-outlined text-sm">movie</span>
+                Explore Creative Suite
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Banner -->
+    <section class="py-12 sm:py-16">
+      <div class="site-container">
+        <div class="glass-card p-6 sm:p-10 glow-border">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div>
+              <p class="font-['Outfit'] font-bold text-2xl sm:text-4xl md:text-5xl text-[#2d4436] mb-1">100%</p>
+              <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest font-semibold">Custom Engineering</p>
+            </div>
+            <div>
+              <p class="font-['Outfit'] font-bold text-2xl sm:text-4xl md:text-5xl text-[#436b53] mb-1">4K</p>
+              <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest font-semibold">Video & Photo Shoots</p>
+            </div>
+            <div>
+              <p class="font-['Outfit'] font-bold text-2xl sm:text-4xl md:text-5xl text-[#2d4436] mb-1">24/7</p>
+              <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest font-semibold">Uptime & Monitoring</p>
+            </div>
+            <div>
+              <p class="font-['Outfit'] font-bold text-2xl sm:text-4xl md:text-5xl text-[#2d4436] mb-1">High-ROI</p>
+              <p class="font-mono text-xs text-[#4a5d50] uppercase tracking-widest font-semibold">Targeted Ad Campaigns</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="site-container">
+      <div class="footer-top">
+        <div class="space-y-4 max-w-sm">
+          <a href="index.html" class="brand-logo">
+            <img src="logo.png" alt="Novus Devv Logo">
+            <span class="brand-name">NOVUS<span>DEVV</span></span>
+          </a>
+          <p class="text-[#4a5d50] text-xs leading-relaxed">
+            Novus Devv (Novus Innovates) — Technical website engineering, 24/7 site management, commercial media production, and high-ROI ads marketing.
+          </p>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025-2026 Novus Devv / Novus Innovates. All rights reserved.</span>
+        <span>Founders: Rithvik S, Shivaan Gowda D, Jaya Shanker</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Menu Overlay -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuTrigger = document.getElementById('mobile-menu-trigger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('close-menu');
+
+      if (menuTrigger && mobileMenu && closeBtn) {
+        menuTrigger.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
         });
-    </script>
 
-</body></html>
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
